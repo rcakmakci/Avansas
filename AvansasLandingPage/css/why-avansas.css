@@ -1,0 +1,106 @@
+.why-avansas{
+    background-color: #F1F1F2;
+    padding: 10px;
+    text-align: center;
+    height: 418px;
+    margin-top: 90px;
+}
+
+.why-avansas h2{
+    margin-top: 25px;
+    font-size: 28px;
+    color: #0039A6;
+    font-weight: 700;
+     
+}
+.why-avansas p{
+    margin-top: 5px;
+    font-size: 13px;
+    color: #333333;
+    font-weight: 400;
+     
+}
+.why-avansas .why-cards{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.why-avansas .why-card{
+    height: 280px;
+    width: 199px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: -10px;
+
+}
+
+.why-avansas .why-card .why-icon{
+    height: 120px;
+    width: 120px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.icon-fiyat-avantajı {
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") -265px -1137px no-repeat;
+    width: 47px;
+    height: 45px;
+  }
+.icon-guven {
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") -5px -1192px no-repeat;
+    width: 60px;
+    height: 62px;
+    margin-left: 10px;
+    position: relative;
+}
+.icon-kolay-siparis-v {
+  background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") -154px -1192px no-repeat;
+  width: 68px;
+  height: 72px;
+  position: relative;
+
+}
+.icon-urun-cesitliligi {
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") -378px -1011px no-repeat;
+    width: 68px;
+    height: 70px;
+    position: relative;
+  }
+  .icon-kolay-iade-v {
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") -75px -1192px no-repeat;
+    width: 69px;
+    height: 67px;
+    position: relative;
+  }
+  .icon-hizi-teslimat {
+    background: url("https://cdnsta.avansas.com/icerik/b2c/content/img/home/header-banner/neden-avansas-sevkiyat-y7.svg") no-repeat;
+    width: 69px;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 67px;
+    position: relative;
+  }
+
+
+
+.why-card h3{
+    margin-top: 30px;
+    color: #0039A6;
+    font-size: 16px;
+    font-weight: 700;
+}
+.why-card p{
+   color: #003aa6bc;
+   font-size: 13px;
+   font-weight: 400;
+}

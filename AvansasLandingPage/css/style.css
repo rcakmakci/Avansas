@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    font-family: 'Open Sans', sans-serif;
+    border: 2px solid rgb(189, 63, 193) in !important;
+}
+
+body{
+    width: 100%;
+    min-height: 110vh;
+    background-color: white;
+
+}
+.fixed-world-img-first{
+    position: fixed;
+    right: 0;
+    top: 39vh;
+    cursor: pointer;
+    z-index: 999;
+}
+.fixed-world-img-second{
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 39vh;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.left-side-fixed{
+    position: fixed;
+    left: -100px;
+    top: 52vh;
+    z-index: 99;
+    background: #F7941D;
+    padding: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    text-align: center;
+}
+
+.lefts-site-fixed-image{
+    display: none;
+    position: fixed;
+    left: 20px;
+    top: 34vh;
+    cursor: pointer;
+    z-index: 9999;
+    height: 268px;
+    width: 200px;
+
+    & img{
+       width: 100%;
+       height: 100%; 
+    }
+    & span{
+        position: absolute;
+        color: white;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+.fixed-world-img-second span{
+  position: absolute;
+  left: 10px;
+  top: 3px;
+  font-size: 20px;
+  cursor: pointer;
+}   
+
+
+

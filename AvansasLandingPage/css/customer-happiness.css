@@ -1,0 +1,97 @@
+
+.customer-happiness{
+    width: 100%;
+    margin-top: 60px;
+    background: url(https://cdn2.avansas.com/icerik/b2c/content/img/home/new/musteri-memnuniyeti-bg-gorsel-min.png) center no-repeat;
+    background-size: auto;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 355px;
+    margin-right: unset;
+    margin-left: unset;
+    padding: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+.customer-happiness header{
+    height: 170px;
+    width: 290px;
+    margin: 40px 25px 20px;
+}
+.customer-happiness header h3{
+   color: #FFFFFF;
+   font-size: 24px;
+   text-transform: capitalize;
+   font-weight: 400;
+
+}
+.customer-happiness header p{
+    color: #FFFFFF;
+    font-size: 12.25px;
+    text-transform: capitalize;
+    font-weight: 300;
+    margin-top: 15px;
+ }
+.customer-happiness .cards{
+    display: flex;
+    gap: 10px;
+}
+ .customer-happiness .card{
+    position: relative;
+    width: 196px;
+    height: 320px;
+    border: 2px solid #338CED;
+    padding: 10px;
+    background-color: white;
+ }
+ 
+ .customer-happiness .card .card-text h2{
+    font-size: 18px;
+    color: #31629F;
+    display: block;
+    font-weight: 700;
+    text-align: left;
+ }
+ .customer-happiness .card .card-text p{
+    text-align: left;
+    font-size: 12px;
+    margin-top: 10px;
+ }
+.customer-happiness .card-icon .icon{
+    position: absolute;
+    bottom: -84px;
+}
+.box-icon-yildiz{
+    width: 168px;
+    height: 124px;
+    display: inline-block;
+    background-position: -20px -736px !important;
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png")
+}
+.box-icon-arac {
+    width: 250px;
+    height: 150px;
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") -270px -1619px no-repeat;
+    position: absolute;
+    margin-right: 50px;
+    bottom: -40px;
+}
+.box-icon-samimiyet {
+    display: inline-block;
+    width: 82px;
+    height: 130px;
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") -232px -1192px no-repeat;
+    margin-left: 45px;
+  }
+.box-icon-musteri-odak {
+    display: inline-block;
+    width: 107px;
+    position: relative;
+    height: 152px;
+    top: 250px;
+    margin-left: 45px;
+    background: url("https://cdnweb.avansas.com/_ui/desktop/common/dist/assets/img/icon/spritev4.png") no-repeat;
+    background-position: -35px -1361px !important;
+  }

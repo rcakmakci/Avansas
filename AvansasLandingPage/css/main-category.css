@@ -1,0 +1,349 @@
+
+.main-category{
+    margin-top: 50px;
+    height: 500px ;
+}
+.main-cotagory-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.menu{
+    display: inline-block;
+    height: 500px;
+    width: 20%;
+    background-color:#F1F1F2 ;
+    margin-top: 10px;
+}
+
+.menu .menu-title{
+    padding: 25px 25px 0 25px;
+    font-size: 26px;
+    line-height: normal;
+    color: #3D3D3D;
+    font-weight: 700;
+}
+
+.menu .menu-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.menu .menu-list .list {
+    padding: 7px 20px 12px;
+    cursor: pointer;
+    line-height: normal;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5;
+    
+}
+.menu .menu-list .list:hover {
+    border-left: 4px solid #3498DB;
+}
+.menu .menu-list .list:hover .menu-list-view-all{
+    opacity: 100%;
+}
+.menu .menu-list .list li{
+    list-style: none;
+    font-size: 12.5px;
+    color: #9E9D9E;
+}
+
+.menu .menu-list .list a{
+    color: #3498DB;
+    font-size: 12.5px;
+    font-weight: 400;
+    opacity: 0;
+    transition: all 0.9;
+}
+
+.menu .menu-list .list a img{
+    width: 14px;
+}
+
+.menu-list-view-all {
+    opacity: 0;
+}
+
+.menu .menu-list .list.active .menu-list-view-all,
+.menu .menu-list .list:hover .menu-list-view-all {
+    opacity: 100%;
+}
+
+.menu .menu-list .list:hover,
+.menu .menu-list .list.active {
+    border-left: 4px solid #3498DB;
+    height: 54px;
+}
+
+.menu .menu-list .list.active li {
+    list-style: none;
+    font-size: 12.5px;
+    color: #000000; /* Siyah renk kodu */
+}
+
+.menu-proudct-list{
+   width: 79%;
+   display: inline-block;
+   height: 500px;
+   float: right;
+   
+   margin-top: 10px;
+
+}
+.menu-productss{
+    display: flex;
+    gap: 12px;
+}
+
+
+.menu-product{
+    position: relative;
+    width: 228px !important;
+    height: 500px;
+    background-color: white;
+    border: 1px solid #EAEAEA;
+}
+.menu-product-content{
+    padding: 15px 15px 0 15px ;
+    width: 100%;
+}
+.menu-product .menu-product-img{
+    height: 160px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.menu-product .menu-product-img img{
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+}
+.menu-product .menu-product-kod {
+    margin-top: 10px;
+    height: 17px;
+    width: 100%;
+
+}
+.menu-product-kod h5{
+    font-size: 12px;
+    color: #868686;
+    font-weight: 400;
+}
+.menu-product-kod h5 span{
+    font-size: 11px;
+    color: #868686;
+    font-weight: 400;
+}
+
+.menu-product-name{
+    width: 100%;
+    height: 59px;
+    margin-top: 10px;
+}
+.menu-product-name h2{
+    font-weight: 700;
+   color: #000;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   font-size: 13px;
+   line-height: 19.5px;
+   height: 59px;
+}
+
+.menu-product-price{
+    position: absolute;
+    bottom: 120px;
+    display: flex;
+    align-items: center;
+}
+.menu-product-price .price{
+    position: relative;
+    color: #F9A14A;
+    font-size: 17.5px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.menu-product-price .price-Kdv{
+    margin-top: 15px;
+}
+.menu-product-price .price-Kdv h6{
+    font-size: 9px;
+    color: #F9A14A;
+    font-weight: 400;
+    margin-left: 5px;
+    text-transform: uppercase;
+    line-height: 10px;
+    
+}
+.menu-product-info{
+    margin-top: 10px;
+}
+.menu-product-info ul li {
+    margin-top: 5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-product-info ul li img{
+
+    width: 15px;
+}
+.menu-product-info ul li span{
+    
+    line-height: 16px;
+    font-size: 10.5px;
+    color: #999999;
+    font-weight: 500;
+
+}
+
+
+.menu-product-evaluation{
+    position: absolute;
+    bottom: 55px;
+    margin-top: 30px;
+    width: 100%;
+    height: 36px;
+}
+
+.menu-product-evaluation .fa-star:not(:first-child),.fa-star-half-stroke{
+    margin-left: -3px;
+}
+.menu-product-evaluation .fa-star,.fa-star-half-stroke{
+    font-size: 15px;
+
+}
+
+.menu-product-evaluation .evaluation-count h5{
+    font-size: 12px;
+    color: #252E41;
+    font-weight: 300;
+}
+.evaluation-count{
+    font-size: 12px;
+    color: #252E41;
+    font-weight: 300;
+}
+
+.menu-product-add{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    left: 0;
+
+    
+}
+
+.menu-product-add .count{
+    display: inline-block;
+    vertical-align: bottom;
+    width: -webkit-calc(100% - 108px);
+    width: -moz-calc(100% - 108px);
+    width: calc(100% - 108px) ;
+    background: #EBEBEB;
+    height: 40px;
+}
+.menu-product-add .count input{
+    width: 33% ;
+    height: 37px;
+    line-height: 37px;
+    margin-top: 2px;
+    text-align: center;
+    border: 0 solid #EBEBEB;
+    color: #000;
+    font-size: 14px;
+    font-size: .875rem;
+}
+/******************** Butonları Temizlemek için ***************/
+.menu-product-add .count  input[type="number"]::-webkit-inner-spin-button,
+.menu-product-add .count  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.menu-product-add .count  input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.menu-product-add .count  input[type="number"]::-webkit-inner-spin-button,
+.menu-product-add .count  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.menu-product-add .count  input[type="number"]::-ms-clear {
+    display: none;
+}
+
+.menu-product-add .count  input[type="number"]::-webkit-inner-spin-button,
+.menu-product-add .count  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.menu-product-add .count button{
+    width: 28%;
+    display: inline-block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+}
+.menu-product-add .count button:hover{
+    background-color: #EBEBEB;
+}
+.menu-product-add .add-btn{
+    display: inline-block;
+    width: 104px;
+    position: relative;
+    left: 118px;
+}
+
+.menu-product-add .add-btn button{
+    position: absolute;
+    width: 108px;
+    background-color: #F9A14A;
+    color: white;
+    bottom: 17px;
+    height: 40px;
+    border: 0;
+    font-size: 12.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    
+}
+
+.şablon-sec{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    font-size: 14px;
+    width: 100%;
+    background: #F9A14A;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.şablon-sec span{
+    color: white;
+    font-size: 12.25px;
+    font-weight:600;
+}

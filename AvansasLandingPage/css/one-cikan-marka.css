@@ -1,0 +1,23 @@
+
+.one-cikan-markalar {
+    margin-top: 60px;
+}
+
+.one-cikan-markalar .brands{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    gap: 0px;
+}
+.brand{
+    height: 45px;
+    width: 168px;
+}
+.brand img{
+    position: relative;
+    width: 90px;
+    height: 48px;
+    transform: translate(-50%);
+    left: 50%;
+}

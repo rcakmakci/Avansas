@@ -1,0 +1,85 @@
+
+.be-avansas{
+    margin-top: 60px;
+}
+
+.boxes{
+    margin-top: 40px;
+}
+.box{
+    width: 590px;
+    height: 362px;
+    display: inline-block;
+    border: 1px solid #F1F1F2;
+    text-align: center;
+    padding: 10px;
+}
+
+.avansas-pro{
+    float: right;
+}
+
+.be-avansas .box .logo{
+    position: relative;
+    height: 62px;
+    width: 230px;
+    transform: translate(-50%);
+    left: 50%;
+    margin-top: 15px;
+}
+
+.be-avansas .box .logo img{
+    height: 100%;
+    width: 100%;
+}
+.be-avansas .box .text {
+    margin-top: 20px;
+    height: 72px;
+    width: 569px;
+    padding: 0 80px;
+}
+.be-avansas .box .text p{
+    font-size: 13px;
+    color: #333333c3;
+}
+
+.be-avansas .box .markalar{
+    position: relative;
+    height: 82px;
+    width: 460px;
+    transform: translate(-50%);
+    left: 50%;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.be-avansas .box .markalar .marka{
+    height: 82px;
+    width: 82px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #EBEBEB;
+}
+
+.be-avansas .box .markalar .marka img{
+    height: 54px;
+    width: 54px;
+    position: relative;
+    transform: translate(-50%,-50%);
+    left: 34%;
+    top: 50%;
+}
+
+.be-avansas .box button{
+    width: 162px;
+    line-height: 32px;
+    text-transform: uppercase;
+    background: #F07B05;
+    padding: 3px 20px;
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    margin: 20px auto;
+}
