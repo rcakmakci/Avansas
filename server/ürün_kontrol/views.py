@@ -15,16 +15,7 @@ def ürün_ekle(Talep):
             Serileştirici.save()
             return Cevap(Serileştirici.data, status=Durum.HTTP_201_CREATED)
         return Cevap(Serileştirici.errors, status=Durum.HTTP_400_BAD_REQUEST)
-    
 
-# İS VALİD KOYMAYI UNUTMA
-# İS VALİD KOYMAYI UNUTMA
-# İS VALİD KOYMAYI UNUTMA
-# İS VALİD KOYMAYI UNUTMA
-# İS VALİD KOYMAYI UNUTMA
-# İS VALİD KOYMAYI UNUTMA
-# İS VALİD KOYMAYI UNUTMA
-# İS VALİD KOYMAYI UNUTMA
 
 @api_view(['GET'])
 def sepet_VERİAL(Talep):
@@ -34,16 +25,6 @@ def sepet_VERİAL(Talep):
         return Cevap(Serileştirici.data, status = Durum.HTTP_200_OK)
 
 
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
-# KAYIT İŞLEMİNDE SERİNLEMENE GEREK YOK
 
 @api_view(['POST'])
 def sepet_ekle(request):

@@ -45,6 +45,7 @@ $(function() {
     
     // ADD PRODUCT FROM CARD
     $('.product-add .add-btn button').on('click', function(event) {
+        event.preventDefault();
         addProductCart(this)
             .then(showCart)
             .catch(function(error) {

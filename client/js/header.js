@@ -66,3 +66,27 @@ function handleMouseLeave() {
 
 shoppingCart.addEventListener("mouseleave", handleMouseLeave);
 shoppingCartBtn.addEventListener("mouseleave", handleMouseLeave);
+
+// Sarch div open 
+
+$(".search-div button").on("click", function () {  
+
+    const searchResultBox =  $(".search-results-box");
+    const inputVal =  $("#search-input").val();
+    
+    if (inputVal == "kağıt") {
+     searchResultBox.addClass("search-results-active");
+
+    }
+    else{
+    searchResultBox.removeClass("search-results-active");
+    }
+    
+})
+$(document).on('click', function(event) {
+    const searchResultBox =  $(".search-results-box");
+    if (!$(event.target).closest('.search-div').length) {
+        searchResultBox.removeClass("search-results-active");
+    }
+});
+    

@@ -42,27 +42,6 @@ document.querySelector('.goButton').addEventListener('click', function() {
 
 
 
-$(".search-div button").on("click", function () {  
 
-    const searchResultBox =  $(".search-results-box");
-    const inputVal =  $("#search-input").val();
-    
-    if (inputVal == "kağıt") {
-     searchResultBox.addClass("search-results-active");
-
-    }
-    else{
-    searchResultBox.removeClass("search-results-active");
-    }
-    
-})
-$(document).on('click', function(event) {
-    const searchResultBox =  $(".search-results-box");
-    console.log(event.target);
-    if (!$(event.target).closest('.search-div').length) {
-        searchResultBox.removeClass("search-results-active");
-    }
-});
-    
 
 
