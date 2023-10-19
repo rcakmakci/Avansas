@@ -11,7 +11,7 @@ Bu repository, Avansas adlı e-ticaret sitesinin ana sayfasının bir klonunu i�
 Proje içerisinde birçok bileşen dinamik olarak oluşturulmuştur. Bu bileşenler, önceden tanımlanmış veri seti ile beslenir ve kullanıcıya dinamik bir deneyim sunar.
 
 ### Öne çıkan dinamik bileşenler:
-
+- **Sepet Sayafası** Sepete ürün işlemleri sorunsuz çalışıyor 
 - **Ürün Listesi:** Kullanıcının seçimine göre dinamik olarak güncellenir.
 - **Ana Katagori Komponenti:** Kullanıcının Hover olduğu katagoriye göre dinamik olarak güncellenir.
 - **Katagori Kısmı:** DropDown ile açılır menü içindeki veriler dinamik bir şekilde gelir.
@@ -20,9 +20,10 @@ Proje içerisinde birçok bileşen dinamik olarak oluşturulmuştur. Bu bileşen
 
 ## Teknolojiler
 
-- HTML
-- CSS
-- JavaScript (jQuery)
+### Front-end
+  - HTML
+  - CSS
+  -  Vanilla JavaScript (jQuery)
 
-
-https://lifeboxtransfer.com/s/555afa7d-58ac-4dc9-b3bd-b54888595a77
+### Back-end 
+  - Django
