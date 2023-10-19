@@ -4,7 +4,7 @@ Bu repository, Avansas adlı e-ticaret sitesinin ana sayfasının bir klonunu i�
 
 ## Proje Görseli
 
-![Proje Görseli](./images/repository-image.png)
+![Proje Görseli](./client/images/repository-image.png)
 
 ## Dinamik Bileşenler
 
