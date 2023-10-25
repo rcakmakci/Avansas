@@ -244,6 +244,48 @@ const AnaKatagoriProducts = {
 
         },
         
+    ],
+    "gıda": [
+        {
+            "produtKod" : "94748",
+            "productName": "  Red Bull Enerji İçeceği 250ml 4'lü",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/94748/red-bull-enerji-icecegi-250-ml-4lu-zoom-1.jpg",
+            "productInfo1" : "250 ml 4 adet",
+            "productIndo2" : "Özel formül",
+            "price" : "132,23 TL",
+            "degerlendirme" :""
+
+        },
+        {
+            "produtKod" : "70025",
+            "productName": "Nestle Coffee Mate Kahve Beyazlatıcı 2 kg",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/70025/nestle-coffee-mate-kahve-kremasi-2-kg-zoom-1.jpg",
+            "productInfo1" : "2 kg",
+            "productIndo2" : "Yumuşak içim keyfi",
+            "price" : "333,23 TL",
+            "degerlendirme" :"73"
+
+        },
+        {
+            "produtKod" : "71189",
+            "productName": " Nescafe Gold Kahve Poşet 200 gr",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/71189/nescafe-gold-kahve-poset-200-gr-zoom-1.jpg",
+            "productInfo1" : "Zengin Nescafe Gold aroması",
+            "productIndo2" : "Her zaman taze ve lezzetli",
+            "price" : "159,11 TL",
+            "degerlendirme" :"106"
+
+        },
+        {
+            "produtKod" : "62232",
+            "productName": " Lipton Doğu Karadeniz Demlik Poşet Çay 500'lü",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/62232/lipton-demlik-poset-cay-dogu-karadeniz-500-lu-zoom-1.jpg",
+            "productInfo1" : "500'lü eko paket",
+            "productIndo2" : "Demlik süzen poşet",
+            "price" : "424,28 TL",
+            "degerlendirme" :"62"
+
+        },
     ]
  }
  

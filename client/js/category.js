@@ -176,35 +176,120 @@ $(function() {
             ]
           },
 
-        "": {
+        "GıdaVeMutfak": {
             "basliklar": [
-              {
-                "ad": "",
-                "icerik1": [
-                  "",
-                  "",
-                  "",
-                  "",
-                  "",
-                  ""
-                ],
-                "icerik2": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "icerik3": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ]
-              },
+                {
+                    "ad": "Temel Gıda Ürünleri",
+                    "icerik1": [
+                      "Kahvaltılık",
+                      "Kuru Bakliyat",
+                      "Makarna",
+                      "Sıvı Yağ",
+                      "Çorba",
+                      "Temel İhtiyaç Paketleri",
+                      "Hazır Yemek ve Konserve",
+                      "Un ve İrmik"
+                    ],
+                    "icerik2": [
+                      "Tuz ve Baharat",
+                      "Kahvaltılık Gevrek",
+                      "Atıştırmalıklar"
+                    ]
+                  },
+                  {
+                    "ad": "Şekerler",
+                    "icerik1": [
+                      "Toz Şekerler",
+                      "Küp Şekerler",
+                      "Tatlandırıcılar",
+                      "Stick Şeker"
+                    ]
+                  }
+                                    
+              
+            ]
+          },
+          "Teknoloji": {
+            "basliklar": [
+                {
+                    "ad": "Ofis Cihazları",
+                    "icerik1": [
+                      "Barkod Okuyucular",
+                      "Ciltleme Makineleri",
+                      "Etiket Makinesi",
+                      "Kağıt Kesme Makinesi",
+                      "Hesap Makineleri",
+                      "Kağıt İmha Makineleri",
+                      "Kesintisiz Güç Kaynakları",
+                      "Laminasyon Makineleri"
+                    ],
+                    "icerik2": [
+                      "Para Sayma ve Kontrol Ürünleri",
+                      "Tarayıcı",
+                      "Televizyon",
+                      "Kameralar ve Güvenlik Sistemleri",
+                      "Yazıcılar"
+                    ]
+                  },
+                  {
+                    "ad": "Pil",
+                    "icerik1": [
+                      "AA / Kalem Pil",
+                      "AAA / İnce Kalem Pil",
+                      "D / Büyük Pil",
+                      "C / Orta Pil",
+                      "Düğme Pil",
+                      "Şarj Edilebilir Pil",
+                      "Pil Şarj Aleti"
+                    ]
+                  },
+                  {
+                    "ad": "Kulaklık",
+                    "icerik1": [
+                      "Mikrofonlu Kulaklık",
+                      "Kablolu Kulaklık",
+                      "Bluetooth Kulaklık",
+                      "Kulak Üstü Kulaklık",
+                      "Kulak İçi Kulaklık"
+                    ]
+                  }
+            ]
+          },
+          "Mobilya Ve Hırdavat": {
+            "basliklar": [
+                {
+                    "ad": "Ofis Mobilyaları",
+                    "icerik1": [
+                      "Dolap ve Kitaplık",
+                      "Çalışma ve Ofis Sandalyesi",
+                      "Çalışma ve Ofis Masası",
+                      "Ofis Tipi Askılıklar",
+                      "Yönetici Koltukları",
+                      "Keson",
+                      "Sehpa"
+                    ]
+                  },
+                  {
+                    "ad": "Kamp ve Bahçe Ürünleri",
+                    "icerik1": [
+                      "Bahçe Sulama Ürünleri",
+                      "Kamp Sandalyesi",
+                      "Kamp Malzemeleri"
+                    ]
+                  },
+                  {
+                    "ad": "Ofis Aksesuarları",
+                    "icerik1": [
+                      "Bayrak ve Flama",
+                      "Dekoratif Masaüstü Ürünler",
+                      "Duvar ve Masa Saatleri",
+                      "Küllükler",
+                      "Paspas"
+                    ]
+                  }
+                  
+                  
+                  
               
             ]
           },

@@ -8,6 +8,8 @@ window.addEventListener('scroll', function() {
         navbar.style.top = '0';
         navbar.style.zIndex="999";
         navbar.style.height="70px";
+        navbar.style.boxShadow="0 0 25px rgba(0,0,0,.1)";
+
     } else {
         navbar.style.position = 'static';
         navbar.style.height="90px"; 
@@ -47,25 +49,30 @@ setInterval(() => {
 
 
 
-// Shopping Cart Open 
+$(document).ready(function() {
+    const $shoppingCart = $(".shopping-cart-box");
+    const $shoppingCartBtn = $(".shopping-cart");
 
-const shoppingCart = document.querySelector(".shopping-cart-box");
-const shoppingCartBtn = document.querySelector(".shopping-cart");
-shoppingCartBtn.addEventListener("mouseover" ,() => {
-    shoppingCartBtn.style.background = "#F4F4F4";
+    $shoppingCartBtn.on("click", function() {
+        $shoppingCartBtn.css("background", "#F4F4F4");
+        $shoppingCart.css({
+            "opacity": "100%",
+            "pointer-events": "visible"
+        });
+        showCart();
+    });
 
-    shoppingCart.style.opacity = "100%";
-    shoppingCart.style.pointerEvents = "visible";
+    function handleMouseLeave() {
+        $shoppingCartBtn.css("background", "");
+        $shoppingCart.css({
+            "opacity": "0%",
+            "pointer-events": "none"
+        });
+    }
+
+    $shoppingCart.on("mouseleave", handleMouseLeave);
+    $shoppingCartBtn.on("mouseleave", handleMouseLeave);
 });
-function handleMouseLeave() {
-    shoppingCartBtn.style.background = "";
-
-    shoppingCart.style.opacity = "0%";
-    shoppingCart.style.pointerEvents = "none";
-}
-
-shoppingCart.addEventListener("mouseleave", handleMouseLeave);
-shoppingCartBtn.addEventListener("mouseleave", handleMouseLeave);
 
 // Sarch div open 
 
