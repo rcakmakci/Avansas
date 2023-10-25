@@ -5,8 +5,8 @@
     padding: 0;
     box-sizing: border-box ;
     font-family: 'Open Sans', sans-serif;
-    border: 2px solid rgb(189, 63, 193) in !important;
 }
+
 
 body{
     width: 100%;
@@ -74,6 +74,7 @@ body{
   font-size: 20px;
   cursor: pointer;
 }   
+
 
 
 

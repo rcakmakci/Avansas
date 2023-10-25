@@ -160,6 +160,47 @@ $(function() {
             "degerlendirme" :"34"
     
         },
+        {
+            "produtKod" : "57848",
+            "productName": " Sandisk Cruzer Blade 16 GB USB 2.0 USB Bellek SDCZ50-016G-B35",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/57848/sandisk-cruzer-blade-16-gb-usb-2-0-usb-bellek-sdcz50-016g-b35-zoom-1.jpg",
+            "productInfo1" : "16 GB bellek",
+            "productIndo2" : "Kişisel dosyalarda parala koyulması ve şifreleme",
+            "price" : "114,04 TL",
+            "degerlendirme" :"13"
+
+        },
+        {
+            "produtKod" : "99632",
+            "productName": " Sunny Prime TV Stick 4K Ultra HD",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/99632/sunny-prime-tv-stick-sn01dngl300-zoom-1.jpg",
+            "productInfo1" : "4K Ultra HD",
+            "productIndo2" : "16 GB Hafıza",
+            "price" : "1.541,18 TL",
+            "degerlendirme" :""
+
+        },
+        {
+            "produtKod" : "76831",
+            "productName": " Panasonic Alkalin Power AA Kalem Pil 10'lu Paket",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/76831/panasonic-lr6apb-10bw-aa-10-lu-pil-zoom-1.jpg",
+            "productInfo1" : "Paket içi miktar: 10 adet",
+            "productIndo2" : "Pil boyu: AA",
+            "price" : "112,82 TL",
+            "degerlendirme" :"38"
+
+        },
+        {
+            "produtKod" : "122604",
+            "productName": " Rowell RW-12600 16  Ayaklı Vantilatör",
+            "imgUrl": "https://cdnsta.avansas.com/mnresize/300/-/urun/122604/rowell-rw-12600-16--vantilator-zoom-1.jpg",
+            "productInfo1" : "3 Kademe hız ayarı + 45Watt motor gücü",
+            "productIndo2" : "3 Kanatlı pervane",
+            "price" : "549,00 TL",
+            "degerlendirme" :"15"
+
+        },
+        
     ]
 
     
@@ -185,31 +226,28 @@ $(function() {
     $(".owl-carousel").children().first().remove(); // var olan ilk boş elementi siliyorum 
     
 
-
-
     var $carousel = $("#owl-demo");
-    
+
     $carousel.owlCarousel({
-        autoplay: true,  
-        autoplayTimeout: 3000,
-        nav: false, 
-        items : 6,
-        pagination:false,
-        slideBy: 5,
-        padding: 20,
-    });
-    var owl = $(".owl-carousel").data('owlCarousel');
-
-    $('.product-list .left-arrow').click(function(){
-        owl.prev();
+        autoplay: false,
+        loop:true,
+        nav: false,
+        items: 6,
+        pagination: false,
+        slideBy: 6,
+        margin: 15,
     });
 
-    $('.product-list .right-arrow').click(function(){
-        owl.next();
-    });
-});
 
-$(function() {
+    $('.left-arrow').click(function() {
+        $carousel.trigger('prev.owl.carousel');
+    });
+
+    $('.right-arrow').click(function() {
+        $carousel.trigger('next.owl.carousel');
+    });
+
+
     $('.increment').click(function() {
         console.log("recep");
         let input = $(this).next('input');
@@ -223,7 +261,10 @@ $(function() {
             input.val(parseInt(input.val()) - 1);
         }
     });
+
 });
+
+
 
 
 

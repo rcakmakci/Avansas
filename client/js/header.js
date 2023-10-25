@@ -90,3 +90,12 @@ $(document).on('click', function(event) {
     }
 });
     
+
+// Active Search div 
+$(".search-div input").on("focus", function() {
+    $(this).closest('.search-div').addClass('search-div-active');
+});
+
+$(".search-div input").on("blur", function() {
+    $(this).closest('.search-div').removeClass('search-div-active');
+});

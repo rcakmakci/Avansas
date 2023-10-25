@@ -1,6 +1,6 @@
 
 
-$(function() {
+$(() => {
     // Increment Product Form Cart
 
     $(document).on('click', ".sh-increment", function(){
@@ -33,9 +33,10 @@ $(function() {
     $(document).on('change' ,'input.card-product-count',function(){
         let countProduct = $(this).val();
         let productCode = $(this).closest('.cart-product').attr('product-code');
-        console.log(productCode);
-        cartProuductCountUpdate(productCode,countProduct)
-        .then(showCart)
+
+        cartProuductCountUpdate(productCode,countProduct).then(() => {
+            showCart();
+        })
         .catch((error) => {
             console.log(error.message);
         })
@@ -46,11 +47,10 @@ $(function() {
     // ADD PRODUCT FROM CARD
     $('.product-add .add-btn button').on('click', function(event) {
         event.preventDefault();
-        addProductCart(this)
-            .then(showCart)
-            .catch(function(error) {
-                console.error("Sepete Ekleme Sırasında Bir Hata Oluştu:", error);
-            });
+        addProductCart(this).then(() => {
+            showCart();
+        });
+           
     });
 
     // DELETE PRODUCT FROM CARD
@@ -191,6 +191,7 @@ function renderSepet(products) {
 
         cartTotalPrice += productTotalPrice;
     });
+
     cartTotalPrice = parseFloat(cartTotalPrice.toFixed(2));
     changeCardInfo(cartTotalPrice, products.length);
 

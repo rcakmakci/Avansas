@@ -114,6 +114,101 @@ $(function() {
               }
             ]
           },
+          "TemizlikveSaglik": {
+            "basliklar": [
+                {
+                    "ad": "Kağıt Temizlik Ürünleri",
+                    "icerik1": [
+                      "Kağıt Havlular",
+                      "Tuvalet Kağıtları",
+                      "Peçete ve Dispenserleri",
+                      "Islak Mendiller",
+                      "Klozet Kapak Örtüsü ve Dispenseri",
+                      "Muayene Masa Örtüsü"
+                    ]
+                },
+                {
+                    "ad": "Tuvalet - Banyo Temizliği",
+                    "icerik1": [
+                      "Çöp Torbaları",
+                      "Kağıt Havlular",
+                      "Kağıt Havlu Dispenserleri",
+                      "Klozet Koku Gidericiler",
+                      "Klozet Kapak Örtüsü ve Dispenseri",
+                      "Sıvı Sabunluk",
+                      "Sabunlar"
+                    ],
+                    "icerik2": [
+                      "Temizlik Bezleri",
+                      "Tuvalet Kağıtları",
+                      "Tuvalet Kağıdı Dispenserleri",
+                      "Temel İhtiyaç Paketleri",
+                      "Yüzey Dezenfektanları"
+                    ]
+                },
+                {
+                    "ad": "Ofis Temizlik Ürünleri",
+                    "icerik1": [
+                      "Böcek İlaçları",
+                      "Çamaşır Suları",
+                      "Çöp Kovaları",
+                      "Çöp Torbaları",
+                      "Oda Kokuları",
+                      "Temizlik Bezleri",
+                      "Temizlik Mopları ve Yedekleri"
+                    ],
+                    "icerik2": [
+                      "Temel İhtiyaç Paketleri",
+                      "El Dezenfektanları",
+                      "Yüzey Dezenfektanları"
+                    ]
+                },
+                {
+                    "ad": "Çamaşır Deterjanı",
+                    "icerik1": [
+                      "Sıvı Deterjan",
+                      "Toz Deterjan",
+                      "Yumuşatıcı",
+                      "Çamaşır Makinesi Temizleyici"
+                    ],
+
+                }       
+            ]
+          },
+
+        "": {
+            "basliklar": [
+              {
+                "ad": "",
+                "icerik1": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "icerik2": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "icerik3": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                  ]
+              },
+              
+            ]
+          },
+
     };
 
     // CATAGORİES DROPDOWN OPEN  
@@ -193,7 +288,7 @@ $(function() {
                 titles.removeClass("active-title")
             })
             hoveredTitle.addClass("active-title");
-    
+
             loadContent(hoveredTitle.text(), categoryContent);
         },
        

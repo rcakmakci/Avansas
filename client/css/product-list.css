@@ -1,4 +1,6 @@
-
+.product-tamplate{
+    display: none;
+}
 .product-list{
     display: inline-block;
     margin-top: 10px;
@@ -70,7 +72,7 @@
 }
 .product .product-img{
     height: 160px;
-    width: 100%;
+    width: 98%;
     margin: 0 auto;
 }
 .product .product-img img{
@@ -95,9 +97,12 @@
 }
 
 .product-name{
-    width: 100%;
+    width: 72%;
     height: 59px;
     margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 .product-name h2{
     font-weight: 700;
@@ -148,7 +153,7 @@
     width: 15px;
 }
 .product-info ul li span{
-    
+    width: 140px;
     line-height: 16px;
     font-size: 10.5px;
     color: #999999;
@@ -208,6 +213,7 @@
     color: #000;
     font-size: 14px;
     font-size: .875rem;
+    outline: none;
 }
 /******************** Butonları Temizlemek için ***************/
 .product-add .count  input[type="number"]::-webkit-inner-spin-button,
@@ -297,12 +303,14 @@
     position: absolute;
     left: 0%;
     top: 50%;
+    z-index: 10;
 }
 
 .product-list .right-arrow {
     position: absolute;
     right: 0;
     top: 50%;
+    z-index: 10;
 }
 
 .container-product:hover .arrow {
