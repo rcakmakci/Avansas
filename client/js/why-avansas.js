@@ -36,7 +36,7 @@ const Whydata ={
 
 $(function() {
     function generateCards(data) {
-        const $template = $(".why-cards-template");
+        const $template = $(document).find(".why-cards-template");
         const $clonedContainer = $template.clone().removeClass("why-cards-template").addClass("why-cards").insertAfter($template);
         $clonedContainer.css({
            'display' : 'flex',
