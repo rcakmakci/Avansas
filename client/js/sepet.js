@@ -46,7 +46,7 @@ $(() => {
     
     // ADD PRODUCT FROM CARD
     $('.product-add .add-btn button').on('click', function(event) {
-        event.preventDefault();
+
         addProductCart(this).then(() => {
             showCart();
         });
@@ -121,12 +121,13 @@ function cartProudctIncrement(productCode) {
 function addProductCart(element) {
     return new Promise(function(resolve, reject) {
         let urunDiv = $(element).closest('.product');
+
         let fiyatText = urunDiv.find('.product-price .price span').text();
         let fiyat = parseFloat(fiyatText.replace(' TL', '').replace(',', '.'));
         
         let urunData = {
             "ürünKodu": parseInt(urunDiv.find('.product-kod .kod').text()),
-            "Adet": parseInt(urunDiv.find('.count input').val())
+            "Adet": parseInt(urunDiv.find('.count input').val()) // try catch doğruluğunu kontrol et 
         };
 
         $.ajax({
@@ -183,17 +184,18 @@ function renderSepet(products) {
 
     // Caldulate Product Price
     let cartTotalPrice  = 0;
-    $.each(products, function(i , product){
+
+    $.each(products, function(i , product){ // Time complexty / space
 
         let productCount = product.Adet;
 
         let productTotalPrice = productCount * product.ürün.Fiyat;
 
-        cartTotalPrice += productTotalPrice;
+        cartTotalPrice += productTotalPrice; 
     });
 
     cartTotalPrice = parseFloat(cartTotalPrice.toFixed(2));
-    changeCardInfo(cartTotalPrice, products.length);
+    changeCardInfo(cartTotalPrice, products.length); // method ismi yanlş
 
 
 
@@ -208,7 +210,7 @@ function renderSepet(products) {
 
 
     $.each(products, function(index, product) {
-
+ //////////////////////////////
         let cartProductTemplate = $(".cart-product-tamplate").clone().removeClass("cart-product-tamplate");
 
         cartProductTemplate.css("display", "flex");

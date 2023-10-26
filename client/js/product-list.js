@@ -249,13 +249,13 @@ $(function() {
 
 
     $('.increment').click(function() {
-        console.log("recep");
+
         let input = $(this).next('input');
         input.val(parseInt(input.val()) + 1);
     });
 
     $('.decrement').click(function() {
-        console.log("tayyiğ");
+
         let input = $(this).prev('input');
         if (parseInt(input.val()) > 0) {
             input.val(parseInt(input.val()) - 1);

@@ -49,7 +49,7 @@ $(function(){
     
         $(".offer-container").append(offerTemplate);
         
-        console.log(offer.imgUrl);    
+  
     });
     
     

@@ -35,7 +35,7 @@
 
 .list-category-navbar a:not(:last-child){
     height: 100%;
-    border-left: 1px solid rgba(255, 255, 255, 0.615);
+    border-left: 1px dotted white;
     flex: 1;
     list-style: none;
     text-align: center;

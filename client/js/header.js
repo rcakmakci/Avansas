@@ -73,10 +73,28 @@ $(document).ready(function() {
     $shoppingCart.on("mouseleave", handleMouseLeave);
     $shoppingCartBtn.on("mouseleave", handleMouseLeave);
 });
+$("#search-input").on('input', function() {
+    let query = $(this).val();
+    console.log(query);
+    if (query.length > 2) {
+        $.ajax({
+            url: '/api/search',
+            type: 'GET',
+            data: { q: query },
+            success: function(data) {
+                OpenSerachResultBox(data)
+            },
+            error:function () {
 
+                OpenSerachResultBox();
+            }
+
+        });
+    }
+});
 // Sarch div open 
 
-$(".search-div button").on("click", function () {  
+function OpenSerachResultBox(data) {  
 
     const searchResultBox =  $(".search-results-box");
     const inputVal =  $("#search-input").val();
@@ -89,7 +107,7 @@ $(".search-div button").on("click", function () {
     searchResultBox.removeClass("search-results-active");
     }
     
-})
+}
 $(document).on('click', function(event) {
     const searchResultBox =  $(".search-results-box");
     if (!$(event.target).closest('.search-div').length) {
