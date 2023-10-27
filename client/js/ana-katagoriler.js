@@ -322,10 +322,12 @@ $(function() {
     function loadProducts(productListKey) {
 
         var products = AnaKatagoriProducts[productListKey];
+        var fragment = $(document.createDocumentFragment());// Dom nesnesi burada toplayıp toplu dom'a ekliyorum
         
         $.each(products, function(i, product) {
             var mainProductTamplate = $(".menu-product-template").clone().removeClass("menu-product-template");
 
+            
             mainProductTamplate.css('display', 'inline-block');
             mainProductTamplate.find(".menu-product-img img").attr("src", product.imgUrl);
             mainProductTamplate.find(".kod").text(product.produtKod);
@@ -346,7 +348,8 @@ $(function() {
             } else {
                 mainProductTamplate.find(".şablon-sec").remove();
             }
-            $(".menu-productss").append(mainProductTamplate);
+            fragment.append(mainProductTamplate);
         });
+        $(".menu-productss").append(fragment);
     };
 });

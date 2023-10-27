@@ -73,6 +73,7 @@ $(document).ready(function() {
     $shoppingCart.on("mouseleave", handleMouseLeave);
     $shoppingCartBtn.on("mouseleave", handleMouseLeave);
 });
+
 $("#search-input").on('input', function() {
     let query = $(this).val();
     console.log(query);
@@ -95,7 +96,7 @@ $("#search-input").on('input', function() {
 // Sarch div open 
 
 function OpenSerachResultBox(data) {  
-
+//Gelen datayla işlemler yapabilriim burada search resul box ı dinamik hale getirebilrim 
     const searchResultBox =  $(".search-results-box");
     const inputVal =  $("#search-input").val();
     

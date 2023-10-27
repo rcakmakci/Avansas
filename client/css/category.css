@@ -12,7 +12,10 @@
     
 
 }
-
+.overlay-active{
+    opacity: 100%;
+    pointer-events: auto;
+}
 .catagories{
     width: 100%;
     background-color: #0039A6;
@@ -32,7 +35,33 @@
     position: relative;
 
 }
-
+.list-category-navbar .category-list-element{
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    list-style: none;
+    background: #0039a6 ;
+    border-left: 1px dotted #fff;
+    padding: 0 34px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.category-list-element a > span{
+    display: inline-block;
+    line-height: 16px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+}
+.list-category-navbar li:hover  .dropdown{
+    opacity: 100%;
+    pointer-events: auto;
+}
+/*
 .list-category-navbar a:not(:last-child){
     height: 100%;
     border-left: 1px dotted white;
@@ -61,11 +90,8 @@
 .list-category-navbar a:hover li .list-title {
     color: #0039A6;
 }
-.list-category-navbar a:hover li .dropdown{
-    opacity: 100%;
-    pointer-events: auto;
-}
 
+*/
 /*********** Dropdown **********/
 .dropdown{
     position: absolute;
@@ -80,7 +106,7 @@
     color: black;
     padding-bottom: 30px;
     display: flex;
-
+    z-index: 10;
 }
 
 .dropdown .category-titles{
@@ -120,7 +146,8 @@
     font-size: 15px;
     margin-right: 10px;
 }
-.category-content{
+.category-content-box{
+    
     display: flex;
     min-width: 300px;
     height: 100%;
@@ -129,10 +156,10 @@
     text-align: start;
 
 }
-.category-content ul{
+.category-content-box ul{
     display: inline-block;
 }
-.category-content ul li {
+.category-content-box ul li {
     list-style: none;
     width: 179px;
     height: 31px;
@@ -143,10 +170,15 @@
     color: #465667;
     text-transform: none in  !important;
 }
-.category-content ul li:hover{
+.category-content-box ul li:hover{
     color: #0139A6;
 }
-
+.category-content{
+    display: none;
+}
+.category-content.active{
+    display: flex !important;
+}
 .for-you{
     background-color: rgb(226, 129, 48);
     position: relative;
@@ -260,19 +292,10 @@
     color: #0139A6;
     font-weight: 700;
 }
-.category-content-box{
-    position: relative;
-    width: 81%;
-    min-height: 300px;
-}
 
-.category-content-manuel{
-    display: none !important;
-}
 
-.category-content-manuel.active{
-    display: block !important;
-}
+
+
 
 .search-for-toner{
     position: absolute;
@@ -438,6 +461,7 @@
         &:hover{
             background: #218BD2;
         }
+      
     }
 
 }
