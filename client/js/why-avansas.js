@@ -44,6 +44,7 @@ $(function() {
         });
 
         $.each(data.cards, function(index, cardData) {
+          
             const $card = $clonedContainer.children().first().clone();
 
             $card.find(".why-icon i").addClass(cardData.class);

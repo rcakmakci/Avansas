@@ -1,18 +1,17 @@
 //NAVBAR MAKE TOP FİXED WHEN SCROLL
 
 window.addEventListener('scroll', function() {
-    var navbar = document.getElementById('navbar-container');
+    var navbar = $('#navbar');
+    console.log(window.scrollY);
 
-    if (window.scrollY > 200) {
-        navbar.style.position = 'fixed';
-        navbar.style.top = '0';
-        navbar.style.zIndex="999";
-        navbar.style.height="70px";
-        navbar.style.boxShadow="0 0 25px rgba(0,0,0,.1)";
-
+    if (window.scrollY < 200) {
+        navbar.addClass("navbar-container");
+        navbar.removeClass("navbar-container-active");
+        
+        
     } else {
-        navbar.style.position = 'static';
-        navbar.style.height="90px"; 
+        navbar.addClass("navbar-container-active");
+        navbar.removeClass("navbar-container");
     }
 });
 
@@ -21,77 +20,50 @@ window.addEventListener('scroll', function() {
 // Bell Animation
 let isBlue = true;
 
-setInterval(() => {
-    const bell = document.querySelector('.bell-btn i');
-    const bellBox = document.querySelector('.animation');
-
-    // Animasyonu sıfırla
-    bell.classList.add('no-animation');
-    bellBox.classList.add('no-animation');
-
-    setTimeout(() => {
-        bell.classList.remove('no-animation');
-        bellBox.classList.remove('no-animation');
-    }, 10);
+function toggleAnimationAndColor() {
+    const bellIcon = $('.animation i');
 
     // Renk değiştir
     if (isBlue) {
-        bell.classList.remove('blue-bell');
-        bell.classList.add('orange-bell');
+        bellIcon.removeClass('blue-bell').addClass('orange-bell');
     } else {
-        bell.classList.remove('orange-bell');
-        bell.classList.add('blue-bell');
+        bellIcon.removeClass('orange-bell').addClass('blue-bell');
     }
-
     isBlue = !isBlue;
-}, 5000);
 
 
+    $('.animation').addClass('animation-active');
+}
 
-
-$(document).ready(function() {
-    const $shoppingCart = $(".shopping-cart-box");
-    const $shoppingCartBtn = $(".shopping-cart");
-
-    $shoppingCartBtn.on("click", function() {
-        $shoppingCartBtn.css("background", "#F4F4F4");
-        $shoppingCart.css({
-            "opacity": "100%",
-            "pointer-events": "visible"
-        });
-        showCart();
-    });
-
-    function handleMouseLeave() {
-        $shoppingCartBtn.css("background", "");
-        $shoppingCart.css({
-            "opacity": "0%",
-            "pointer-events": "none"
-        });
-    }
-
-    $shoppingCart.on("mouseleave", handleMouseLeave);
-    $shoppingCartBtn.on("mouseleave", handleMouseLeave);
+// Animasyon bittiğinde yeniden tetikle
+$('.animation').on('animationend', function() {
+    $(this).removeClass('animation-active');
+    setTimeout(toggleAnimationAndColor, 4000);  
 });
 
+
+toggleAnimationAndColor();
+
+
 $("#search-input").on('input', function() {
-    let query = $(this).val();
-    console.log(query);
-    if (query.length > 2) {
+    let query = $(this);
+
+    if (query.val().length > 2) {
         $.ajax({
             url: '/api/search',
             type: 'GET',
-            data: { q: query },
+            data: { q: query.val() },
             success: function(data) {
-                OpenSerachResultBox(data)
+                
             },
             error:function () {
-
-                OpenSerachResultBox();
+                OpenSerachResultBox(data)
+                
             }
 
         });
     }
+
 });
 // Sarch div open 
 

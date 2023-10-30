@@ -204,25 +204,29 @@ $(function() {
     ]
 
     
-    
+    const produtListFragment = $(document.createDocumentFragment());
     // Her ürün için HTML yapısnını oluşturma
     $.each(Produt, function(index, product) {
-        
-            var productTamplate = $(".product-tamplate").clone().removeClass("product-tamplate");
-            productTamplate.find("#product-a").css('display' , 'inline-block');
-            productTamplate.find(".product-img img").attr("src" , product.imgUrl);
-            productTamplate.find(".kod").text(product.produtKod);
-            productTamplate.find(".product-name h2").text(product.productName);
-            productTamplate.find(".price span").text(product.price + " "+"TL");
-            productTamplate.find(".product-info ul li:eq(0) span ").text(product.productInfo1);
-            productTamplate.find(".product-info ul li:eq(1) span ").text(product.productIndo2);
-            productTamplate.find(".evaluation-count h5").text(product.degerlendirme + "Değerlendirme");
+            if(index <= 24){
+                var productTamplate = $(".product-tamplate").clone().removeClass("product-tamplate");
+                productTamplate.find("#product-a").css('display' , 'inline-block');
+                productTamplate.find(".product-img img").attr("src" , product.imgUrl);
+                productTamplate.find(".kod").text(product.produtKod);
+                productTamplate.find(".product-name h2").text(product.productName);
+                productTamplate.find(".price span").text(product.price + " "+"TL");
+                productTamplate.find(".product-info ul li:eq(0) span ").text(product.productInfo1);
+                productTamplate.find(".product-info ul li:eq(1) span ").text(product.productIndo2);
+                productTamplate.find(".evaluation-count h5").text(product.degerlendirme + "Değerlendirme");
 
-            $("#owl-demo").append(productTamplate);
-        
+                produtListFragment.append(productTamplate);
+            }
             
+        
+        
     });
 
+    $(".owl-carousel").append(produtListFragment);
+    
     $(".owl-carousel").children().first().remove(); // var olan ilk boş elementi siliyorum 
     
 

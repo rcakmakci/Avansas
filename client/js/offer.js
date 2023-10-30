@@ -30,7 +30,7 @@ $(function(){
             "title": "Bayrak ve Flama Ürünleri Avansas'ta",
             "desceription" :"En uygun fiyat seçenekleriyle sizleri bekliyor!"
         },
-       
+        
     ]
         
     
@@ -38,8 +38,8 @@ $(function(){
     
     
     $.each(offerInfo, function(index, offer) {
-        
-        var offerTemplate = $(".offer-tamplate").clone().removeClass("offer-tamplate");
+        if(index <= 6){
+            var offerTemplate = $(".offer-tamplate").clone().removeClass("offer-tamplate");
         offerTemplate.css('display', 'inline-block');
         
         // Use correct selectors to find and modify the child elements
@@ -48,13 +48,15 @@ $(function(){
         offerTemplate.find(".offer-div-info p").text(offer.desceription);
     
         $(".offer-container").append(offerTemplate);
+        }else{
+            console.error("offer kısmında fazla veri geliyor!!");
+        }
         
-  
     });
     
     
 
 })
 
-//$(".owl-carousel").children().first().remove(); // var olan ilk boş elementi siliyorum 
+
 

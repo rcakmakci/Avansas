@@ -15,7 +15,18 @@ a{
     width: 100%;
 }
 
-#navbar-container{
+.navbar-container{
+    position: static;
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+}
+.navbar-container-active{
+    position: fixed !important;
+    top: 0;
+    height: 70px !important;
+    box-shadow: 0 0 25px rgba(0,0,0,.1) !important;
+    z-index: 999;
     width: 100%;
     height: 90px;
     background-color: #fff;
@@ -303,15 +314,11 @@ a{
     margin-top: 14px;
     font-size: 25px;
 }
-
-.animation {
+.animation-active {
     transform-origin: 50% 0%;
     animation: swing 0.5s ease-in-out;
 }
 
-.no-animation {
-    animation: none !important; /* 'important' ensures it overrides other styles */
-}
 
 .blue-bell {
     color: #2C97DE;

@@ -1,17 +1,40 @@
 
 
 $(() => {
+    // Shopping Cat Open or Close Functions
+    
+    const $shoppingCart = $(".shopping-cart-box");
+    const $shoppingCartBtn = $(".shopping-cart");
+
+    $shoppingCartBtn.on("click", function() {
+        $shoppingCartBtn.css("background", "#F4F4F4");
+        $shoppingCart.css({
+            "opacity": "100%",
+            "pointer-events": "visible"
+        });
+        showCart();
+    });
+
+    function handleMouseLeave() {
+        $shoppingCartBtn.css("background", "");
+        $shoppingCart.css({
+            "opacity": "0%",
+            "pointer-events": "none"
+        });
+    }
+
+    $shoppingCart.on("mouseleave", handleMouseLeave);
+    $shoppingCartBtn.on("mouseleave", handleMouseLeave);
+
     // Increment Product Form Cart
 
     $(document).on('click', ".sh-increment", function(){
         let input = $(this).next('input');
         input.val(parseInt(input.val()) + 1).change();
         let productCode = $(this).closest('.cart-product').attr('product-code');
-        cartProudctIncrement(productCode)
-        .then(showCart)
-        .catch((error)=>{
-            console.log(error);
-        })
+        cartProudctIncrement(productCode).then(() =>{
+            showCart();});
+        
     });
     
     // Decrement Product Form Cart
@@ -21,11 +44,9 @@ $(() => {
             input.val(parseInt(input.val()) - 1).change();
         }
         let productCode = $(this).closest('.cart-product').attr('product-code');
-        cartProuductDecrement(productCode)
-        .then(showCart)
-        .catch((error)=>{
-            console.log(error);
-        })
+        cartProuductDecrement(productCode).then(() =>{
+            showCart();});
+        
 
     });
     
@@ -37,9 +58,7 @@ $(() => {
         cartProuductCountUpdate(productCode,countProduct).then(() => {
             showCart();
         })
-        .catch((error) => {
-            console.log(error.message);
-        })
+       
         
 
     });
@@ -56,14 +75,9 @@ $(() => {
     // DELETE PRODUCT FROM CARD
     $(document).on('click', '.cart-delete-product img', function(event) {
         let productId = $(this).closest('.cart-product').attr('product-code');
-        deleteProductCart(productId)
-            .then(showCart)
-            .catch(function(error) {
-                console.error("Bir hata oluştu:", error);
-                if (error.status === 404) {
-                    console.error("Server'a Ulaşılamıyor");
-                }
-            });
+        deleteProductCart(productId).then(() =>{
+            showCart();});
+            
     });
 
     showCart();
@@ -122,9 +136,6 @@ function addProductCart(element) {
     return new Promise(function(resolve, reject) {
         let urunDiv = $(element).closest('.product');
 
-        let fiyatText = urunDiv.find('.product-price .price span').text();
-        let fiyat = parseFloat(fiyatText.replace(' TL', '').replace(',', '.'));
-        
         let urunData = {
             "ürünKodu": parseInt(urunDiv.find('.product-kod .kod').text()),
             "Adet": parseInt(urunDiv.find('.count input').val()) // try catch doğruluğunu kontrol et 
@@ -179,54 +190,61 @@ function showCart() {
 }
 
 
-function renderSepet(products) {
-    $(".shopping-cart-product").empty();
+function renderCart(products) {
+    const $shoppingCartProduct = $(".shopping-cart-product");
+    $shoppingCartProduct.empty();
 
-    // Caldulate Product Price
-    let cartTotalPrice  = 0;
+    let cartTotalPrice = products.reduce((total, product) => {
 
-    $.each(products, function(i , product){ // Time complexty / space
-
-        let productCount = product.Adet;
-
-        let productTotalPrice = productCount * product.ürün.Fiyat;
-
-        cartTotalPrice += productTotalPrice; 
-    });
-
+        if (!product || !product.ürün || typeof product.Adet !== 'number' || typeof product.ürün.Fiyat !== 'number') {
+            console.error('Ürün geçersiz özelliklere sahip:', product);
+            return total;
+        }
+        if (product.Adet <= 0 || product.ürün.Fiyat < 0) {
+            console.error('Ürün adedi veya fiyatı negatif olamaz:', product);
+            return total;
+        }
+    
+        return total + (product.Adet * product.ürün.Fiyat);
+    }, 0);
+    
     cartTotalPrice = parseFloat(cartTotalPrice.toFixed(2));
-    changeCardInfo(cartTotalPrice, products.length); // method ismi yanlş
+    
 
-
+    // Fonksiyon adı düzeltildi: changeCardInfo -> changeCartInfo
+    changeCartInfo(cartTotalPrice, products.length);
 
     if (!products.length) {
-        $(".shopping-cart-product")
+        $shoppingCartProduct
             .removeClass("shopping-cart-product")
             .addClass('shopping-cart-product-empty')
             .text("Sepetenizde Ürün Bulunmamaktadır");
         return;
     }
 
-
-
-    $.each(products, function(index, product) {
- //////////////////////////////
-        let cartProductTemplate = $(".cart-product-tamplate").clone().removeClass("cart-product-tamplate");
-
-        cartProductTemplate.css("display", "flex");
-        cartProductTemplate.attr("product-id", product.ürün.id);
-        cartProductTemplate.attr("product-code", product.ürün.productKod);
-        cartProductTemplate.find(".image-box img").attr("src", product.ürün.imgUrl);
-        cartProductTemplate.find(".cart-product-title").text(product.ürün.productName);
-        cartProductTemplate.find(".card-product-count").attr("product-id", product.ürün.id);
-        cartProductTemplate.find(".cart-product-price").text(product.ürün.Fiyat + " KDV Dahil");
-        cartProductTemplate.find(".cart-edit-product-count input").val(product.Adet);
-
-        $(".shopping-cart-product").append(cartProductTemplate);
-    });
+    for (let product of products) {
+        let $cartProductTemplate = createCartProductTemplate(product);
+        $shoppingCartProduct.append($cartProductTemplate);
+    }
 }
 
-function changeCardInfo(total, count) {
+function createCartProductTemplate(product) {
+    const $template = $(".cart-product-tamplate").first().clone().removeClass("cart-product-tamplate");
+    $template.css("display", "flex");
+    $template.attr({
+        "product-id": product.ürün.id,
+        "product-code": product.ürün.productKod
+    });
+    $template.find(".image-box img").attr("src", product.ürün.imgUrl);
+    $template.find(".cart-product-title").text(product.ürün.productName);
+    $template.find(".card-product-count").attr("product-id", product.ürün.id);
+    $template.find(".cart-product-price").text(`${product.ürün.Fiyat} KDV Dahil`);
+    $template.find(".cart-edit-product-count input").val(product.Adet);
+
+    return $template;
+}
+
+function changeCartInfo(total, count) {
     if(total == 0){
         total = "00.00"
     }
