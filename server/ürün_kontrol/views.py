@@ -1,11 +1,31 @@
 from django.shortcuts import render
-
-# Create your views here.
 from rest_framework.decorators import api_view
-from . serializer import SepetÜrünModelSerileştirici, SepetÜrünSerileştirici, ÜrünSerileştirici, SepetSerileştirici
-from rest_framework import status as Durum
+from .serializer import SepetÜrünModelSerileştirici
 from rest_framework.response import Response as Cevap
-from . models import SepetÜrün, Ürün
+from .models import Ürün, SepetÜrün 
+from rest_framework import status as Durum
+
+
+@api_view(['GET'])
+def sepet_detayları_al(Talep):
+    if Talep.method == 'GET':
+        sepet_ürünleri = SepetÜrün.objects.all()
+        serileştirici = SepetÜrünModelSerileştirici(sepet_ürünleri, many=True)
+        
+        # Toplam fiyatı hesapla
+        toplam_fiyat = sum([ürün.Adet * ürün.ürün.Fiyat for ürün in sepet_ürünleri])
+        
+        # Benzersiz ürün sayısını hesapla
+        benzersiz_ürün_sayısı = sepet_ürünleri.count()
+        
+        # Cevap verisi
+        cevap_verisi = {
+            'productLength': benzersiz_ürün_sayısı,
+            'totalPrice': toplam_fiyat,
+        }
+
+        return Cevap(cevap_verisi, status=Durum.HTTP_200_OK)
+
 
 @api_view(['POST'])
 def ürün_ekle(Talep):
@@ -91,7 +111,7 @@ def sepet_Adet_azalt(Talep, numara):
 def sepet_ürün_kaldır(Talep, numara):
     if Talep.method == 'DELETE':
         ürün = SepetÜrün.objects.get(ürün__productKod = numara)
-        Serileştirici = SepetÜrünSerileştirici(ürün)
+        Serileştirici = SepetÜrünModelSerileştirici(ürün)  # Change this line
         try:
             ürün.delete()
             return Cevap([{'Silme İşlemi':'BAŞARILI'}, Serileştirici.data], status = Durum.HTTP_200_OK)

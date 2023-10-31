@@ -9,4 +9,5 @@ urlpatterns = [
     path('sepet/ürün-artır/<int:numara>', views.sepet_Adet_artır),
     path('sepet/ürün-azalt/<int:numara>', views.sepet_Adet_azalt),
     path('sepet/ürün-adet-update/<int:numara>/<int:adet>', views.sepet_Adet_Update),
+    path('sepet-detaylari/', views.sepet_detayları_al, name='sepet-detaylari'),
 ]

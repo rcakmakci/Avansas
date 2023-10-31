@@ -2,7 +2,7 @@
 
 window.addEventListener('scroll', function() {
     var navbar = $('#navbar');
-    console.log(window.scrollY);
+
 
     if (window.scrollY < 200) {
         navbar.addClass("navbar-container");
@@ -35,7 +35,7 @@ function toggleAnimationAndColor() {
     $('.animation').addClass('animation-active');
 }
 
-// Animasyon bittiğinde yeniden tetikle
+// Animasyon bittiğinde yeniden tetikliyor
 $('.animation').on('animationend', function() {
     $(this).removeClass('animation-active');
     setTimeout(toggleAnimationAndColor, 4000);  

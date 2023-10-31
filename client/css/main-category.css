@@ -216,9 +216,11 @@
 
 .menu-product-evaluation .fa-star:not(:first-child),.fa-star-half-stroke{
     margin-left: -3px;
+    color: #fda01d;
 }
 .menu-product-evaluation .fa-star,.fa-star-half-stroke{
     font-size: 15px;
+    color: #fda01d;
 
 }
 

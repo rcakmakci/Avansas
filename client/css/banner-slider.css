@@ -37,7 +37,6 @@
     font-size: 12.25px
 
 }
-
 .banner-slider-container .sliders-btns button:active{
     background-color: #EAEAEA;
 }
@@ -71,6 +70,7 @@
     z-index: 3;
 }
 .activeBtn{
-    background-color: #EAEAEA ;
-    border-bottom: 6px solid #3498DB;
+    background-color: #EAEAEA  ;
+    border-bottom: 6px solid #3498DB ;
 }
+

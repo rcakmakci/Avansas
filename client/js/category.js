@@ -304,14 +304,14 @@
     }
     
     function createTitleTemplate(title) {
-        return $(".title-in-dropdown-template")
-            .clone()
-            .css("display", "flex")
+        var newTitleInDropdown =  $(".title-in-dropdown-template").clone();
+            newTitleInDropdown.css("display", "flex")
             .removeClass("title-in-dropdown-template")
             .find('.category-title')
-            .text(title)
-            .end()
-            .attr("data-category", title);
+            .text(title);
+            newTitleInDropdown.attr("data-category", title);
+            
+        return newTitleInDropdown;
     }
     
     function createContentTemplate(title, items) {
@@ -319,16 +319,19 @@
             .clone()
             .removeClass("category-content-template")
             .attr("data-category", title);
-    
+
+           
         let currentUl = contentTemplate.find("ul");
-    
+        
         $.each(items, (i, item) => {
-            if (i % 8 === 0 && i !== 0) {
+            if (i % 8 === 0){
                 currentUl = $('<ul></ul>');
                 contentTemplate.append(currentUl);
             }
             currentUl.append(`<li>${item}</li>`);
+            
         });
+        
     
         return contentTemplate;
     }

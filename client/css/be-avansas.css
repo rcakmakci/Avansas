@@ -43,7 +43,7 @@
     color: #333333c3;
 }
 
-.be-avansas .box .markalar{
+.be-avansas .box .trademarks{
     position: relative;
     height: 82px;
     width: 460px;
@@ -54,7 +54,7 @@
     align-items: center;
     gap: 10px;
 }
-.be-avansas .box .markalar .marka{
+.be-avansas .box .trademarks .trademark{
     height: 82px;
     width: 82px;
     background-color: white;
@@ -62,7 +62,7 @@
     border: 1px solid #EBEBEB;
 }
 
-.be-avansas .box .markalar .marka img{
+.be-avansas .box .trademarks .trademark img{
     height: 54px;
     width: 54px;
     position: relative;

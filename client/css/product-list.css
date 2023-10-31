@@ -173,10 +173,12 @@
 
 .product-evaluation .stars .fa-star:not(:first-child),.fa-star-half-stroke{
     margin-left: -3px;
+    color: #fda01d;
+
 }
 .product-evaluation .stars .fa-star,.fa-star-half-stroke{
     font-size: 15px;
-
+    color: #fda01d;
 }
 
 .product-evaluation .evaluation-count h5{
@@ -277,9 +279,12 @@
     font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
+    transition: 0.2s;
     
 }
-
+.product-add .add-btn button:active{
+    background-color: #F4F4F4;
+}
 
 
 .product-list .arrow img {

@@ -26,13 +26,16 @@ $(function(){
     showImg(indexValue);
 
     function btm_slide(e) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = startAutoSlide();
         showImg(indexValue = e);
     }
 
     function side_slide(e) {
         clearInterval(autoSlideInterval);
-        showImg(indexValue += e);
         autoSlideInterval = startAutoSlide();
+        showImg(indexValue += e);
+        
     }
 
     function showImg(e) {
