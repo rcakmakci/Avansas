@@ -26,6 +26,9 @@
     display: flex;
     gap: 30px;
 }
+.why-card-active{
+  display: flex;
+}
 
 .why-avansas .why-card{
     height: 280px;

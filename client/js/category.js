@@ -290,17 +290,25 @@
     }
     
     function populateCategoryData($element) {
+        const dropDown =$element.find(".dropdown");
         const categoryName = $element.find(".list-title").text();
         const listData = categoryData[categoryName];
         const $ulElement = $element.find(".dropdown .category-titles ul");
-    
+        
+
         $.each(listData, (title, items) => {
             const titleTemplate = createTitleTemplate(title);
             $ulElement.append(titleTemplate);
-    
+
             const contentTemplate = createContentTemplate(title, items);
             $element.find(".category-content-box").append(contentTemplate);
         });
+
+        if(categoryName === "Kartuş toner"){
+            var $searchTonerBox = $(".search-for-toner").clone().css('display' , 'block');
+            $element.find(".category-content-box").append($searchTonerBox);
+            dropDown.css("min-height" , "440px");
+        }
     }
     
     function createTitleTemplate(title) {
@@ -320,6 +328,7 @@
             .removeClass("category-content-template")
             .attr("data-category", title);
 
+
            
         let currentUl = contentTemplate.find("ul");
         
@@ -331,7 +340,7 @@
             currentUl.append(`<li>${item}</li>`);
             
         });
-        
+
     
         return contentTemplate;
     }
@@ -369,3 +378,22 @@
         $('.overlay').removeClass("overlay-active");
     }
 
+
+    
+
+// Search For Toner Transactions Within
+$(document).on("click", '.header-box .title-box',function() {
+
+    $('.header-box .title-box').removeClass('selected-title-box');
+    var index = $(this).attr('index');
+    
+    $(this).addClass('selected-title-box');
+
+    $('.body-box > div').removeClass('active');
+
+    $('.body-box > div').each(function() {
+        if ($(this).attr('index') === index) {
+            $(this).addClass('active');
+        }
+    });
+});

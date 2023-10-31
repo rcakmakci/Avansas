@@ -49,7 +49,7 @@ $(function(){
     
         $(".offer-container").append(offerTemplate);
         }else{
-            console.error("offer kısmında fazla veri geliyor!!");
+            return false
         }
         
     });

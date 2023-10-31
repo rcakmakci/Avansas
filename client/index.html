@@ -291,11 +291,7 @@
                 </div>  
             </div>
         </div>
-        <div id="category-template" style="display: none;">
-            <ul>
-                <li id="category-name" style="display: none;"></li>
-            </ul>
-        </div>
+        
 
         <section class="catagories">
             <div class="category-container">
@@ -402,13 +398,13 @@
                 
             </div>
             <div class="sliders-btns">
-                <button  class="activeBtn" data-slide="1"">İlk Siparişe Özel</button >
-                <button  class="gobutton " data-slide="2"">10 Al 8 Öde</button >
-                <button   data-slide="3"">Aldıkça Kazan</button >
-                <button   data-slide="4"">Serinleten Fırsatlar</button >
-                <button   data-slide="5""> Ağustos Fırsatları</button >
-                <button   data-slide="6"">5 Al 4 Öde</button >
-                <button   data-slide="7"">Baskılı İşler</button >
+                <button class="activeBtn" data-slide="1"">İlk Siparişe Özel</button >
+                <button class="gobutton " data-slide="2"">10 Al 8 Öde</button >
+                <button data-slide="3"">Aldıkça Kazan</button >
+                <button data-slide="4"">Serinleten Fırsatlar</button >
+                <button data-slide="5""> Ağustos Fırsatları</button >
+                <button data-slide="6"">5 Al 4 Öde</button >
+                <button data-slide="7"">Baskılı İşler</button >
             </div>
         </section>
 
@@ -571,7 +567,6 @@
             <h2> Neden Avansas?</h2>
             <p><i>1 milyon ‘dan fazla müşterinin bizi tercih etmesinin bir çok sebebi var!</i></p>
             <div class="why-cards">
-                
                 <div class="why-cards-template" style="display: none;">
                     <div class="why-card">
                       <div class="why-icon">
@@ -581,6 +576,7 @@
                       <p></p>
                     </div>
                   </div>
+               
                 
             </div>
             
@@ -739,31 +735,7 @@
 
         <section class="popular">
             <div class="popular-container">
-                <!-- Popüler Aramalar Şablonu -->
-                <div class="popular-aramalar populer template-section" style="display:none;">
-                    <h2>Popüler Aramalar</h2>
-                    <div class="lists">
-                        <div class="table-container template-table">
-                            <ul class="template-list">
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <!-- Popüler Markalar Şablonu -->
-                <div class="populer-markalar populer template-section" style="display:none;">
-                    <h2>Popüler Markalar</h2>
-                    <div class="lists">
-                        <div class="table-container template-table">
-                            <ul class="template-list">
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </div>
+               
             
                 <!-- Dinamik olarak doldurulacak yer (Mevcut yapınız) -->
             </div>
@@ -858,191 +830,275 @@
             </div>
         </div>
     </footer>
-   
-    <!--Template for product from cart-->
-    <div product-id="" product-code="" class="cart-product cart-product-tamplate" style="display: none;">
-        <div class="image-box">
-            <img src="https://cdnsta.avansas.com/mnresize/300/-/urun/67444/avansas-power-plus-hotmelt-koli-bandi-45-mm-x-100-m-seffaf-6-li-paket-zoom-1.jpg" alt="">
+    <div style="display: none;">
+ 
+         <!-- Popüler Aramalar Şablonu -->
+         <div class="popular-aramalar populer template-section" >
+            <h2>Popüler Aramalar</h2>
+            <div class="lists">
+                <div class="table-container template-table">
+                    <ul class="template-list">
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+            
         </div>
-        <div class="cart-product-info">
-            <span class="cart-product-title"></span>
-            <span class="cart-product-price"></span>
+        
+        <!-- Popüler Markalar Şablonu -->
+        <div class="populer-markalar populer template-section" >
+            <h2>Popüler Markalar</h2>
+            <div class="lists">
+                <div class="table-container template-table">
+                    <ul class="template-list">
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+            
         </div>
-        <div class="cart-edit-product-count" >
-            <button   class="sh-increment">+</button >
-            <input product-id="" class="card-product-count" type="number" value="1" min="1">
-            <button  class="sh-decrement" >-</button >
+        <!--Template forwhy-cards -->
+        
+        <!--Template forcategory-template-->
+        <div id="category-template" >
+            <ul>
+                <li id="category-name" ></li>
+            </ul>
         </div>
-        <div class="cart-delete-product"  >
-            <img src="images/trash-solid.svg" alt="">
+        <!--Template for product from cart-->
+        <div product-id="" product-code="" class="cart-product cart-product-tamplate" >
+            <div class="image-box">
+                <img src="https://cdnsta.avansas.com/mnresize/300/-/urun/67444/avansas-power-plus-hotmelt-koli-bandi-45-mm-x-100-m-seffaf-6-li-paket-zoom-1.jpg" alt="">
+            </div>
+            <div class="cart-product-info">
+                <span class="cart-product-title"></span>
+                <span class="cart-product-price"></span>
+            </div>
+            <div class="cart-edit-product-count" >
+                <button   class="sh-increment">+</button >
+                <input product-id="" class="card-product-count" type="number" value="1" min="1">
+                <button  class="sh-decrement" >-</button >
+            </div>
+            <div class="cart-delete-product"  >
+                <img src="images/trash-solid.svg" alt="">
+            </div>
         </div>
-    </div>
 
-    <!--Product Tamplate -->
-    <div class="product item product-tamplate">
-        <a id="product-a" href="#" class="" style="display: none;">
-            <div class="product-content">
-                <div class="product-img">
+        <!--Product Tamplate -->
+        <div class="product item product-tamplate">
+            <a id="product-a" href="#" class="" >
+                <div class="product-content">
+                    <div class="product-img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="product-explanation">
+                        <div class="product-kod">
+                            <h5>Ürün Kodu : <span class="kod"></span></h5>
+                        </div>
+                        <div class="product-name">
+                            <h2></h2>
+                        </div>
+                        <div class="product-price">
+                            <div class="price">
+                                <span></span>
+                            </div>
+                            <div class="price-Kdv">
+                                <h6>Kdv</h6>
+                                <h6>Dahil</h6>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <ul>
+                                <li><img src="images/check(1).png" alt=""><span></span></li>
+                                <li><img src="images/check(1).png" alt=""><span></span></li>
+                            </ul>
+                        </div>
+                        <div class="product-evaluation">
+                            <div class="stars">
+                                <!-- Burada yıldız sayısını dinamik olarak ekleyebilirsiniz. Örnek olarak hepsini doldurdum. -->
+                                <i class="fa-solid fa-star" ></i>
+                                <i class="fa-solid fa-star" ></i>
+                                <i class="fa-solid fa-star" ></i>
+                                <i class="fa-solid fa-star-half-stroke" ></i>
+                                <i class="fa-regular fa-star" ></i>
+                            </div>
+                            <div class="evaluation-count">
+                                <h5> </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </a>     
+            <div class="product-add">
+                <div class="count">
+                    <button  class="increment" ><i class="fa fa-plus fa-xs" style="color: #969896;"></i></button >
+                    <input type="number" value="1">
+                    <button  class="decrement"><i class="fa fa-minus fa-xs" style="color: #969896;"></i></button >
+                </div>
+                <div class="add-btn">
+                    <button  type="button ">Sepete Ekle</button >
+                </div>
+            </div>
+        </div>
+
+        <!--Menu Product Tamplate-->
+        <div class="menu-product item  menu-product-template" >
+            <div class="menu-product-content">
+                <div class="menu-product-img">
                     <img src="" alt="">
                 </div>
-                <div class="product-explanation">
+                <div class="menu-product-explanation">
                     <div class="product-kod">
-                        <h5>Ürün Kodu : <span class="kod"></span></h5>
+                        <h5>Ürün Kodu : <span class="kod" id="product-code "></span></h5>
                     </div>
-                    <div class="product-name">
-                        <h2></h2>
+                    <div class="menu-product-name">
+                        <h2> </h2>
                     </div>
-                    <div class="product-price">
+                    <div class="menu-product-info">
+                        <ul>
+                            <li><img src="images/check(1).png" alt=""><span></span></li>
+                            <li><img src="images/check(1).png" alt=""><span></span></li>
+                        </ul>
+                    </div>
+                    <div class="menu-product-price">
                         <div class="price">
-                            <span></span>
+                            <span> </span>
                         </div>
                         <div class="price-Kdv">
                             <h6>Kdv</h6>
                             <h6>Dahil</h6>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <ul>
-                            <li><img src="images/check(1).png" alt=""><span></span></li>
-                            <li><img src="images/check(1).png" alt=""><span></span></li>
-                        </ul>
-                    </div>
-                    <div class="product-evaluation">
+
+                    <div class="menu-product-evaluation">
                         <div class="stars">
-                            <!-- Burada yıldız sayısını dinamik olarak ekleyebilirsiniz. Örnek olarak hepsini doldurdum. -->
-                            <i class="fa-solid fa-star" ></i>
-                            <i class="fa-solid fa-star" ></i>
-                            <i class="fa-solid fa-star" ></i>
-                            <i class="fa-solid fa-star-half-stroke" ></i>
-                            <i class="fa-regular fa-star" ></i>
+                            <!-- Burada yıldızların doğru sayıda ve doğru türde olduğundan emin olmalısınız. -->
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="evaluation-count">
-                            <h5> </h5>
+                            <h5 class="evaluation-countt"></h5>
                         </div>
                     </div>
                 </div>
-            </div> 
-        </a>     
-        <div class="product-add">
-            <div class="count">
-                <button  class="increment" ><i class="fa fa-plus fa-xs" style="color: #969896;"></i></button >
-                <input type="number" value="1">
-                <button  class="decrement"><i class="fa fa-minus fa-xs" style="color: #969896;"></i></button >
+
+                <a class="şablon-sec" "><span>Şablon Seç</span></a>
+
+                <div class="menu-product-add">
+                    <div class="count">
+                        <button ><i class="fa-solid fa-plus fa-xs" style="color: #969896;"></i></button >
+                        <input type="number" value="1">
+                        <button ><i class="fa-solid fa-minus fa-xs " style="color: #969896;"></i></button >
+                    </div>
+                    <div class="add-btn">
+                        <button >Sepete Ekle</button >
+                    </div>
             </div>
-            <div class="add-btn">
-                <button  type="button ">Sepete Ekle</button >
             </div>
         </div>
-    </div>
-
-      <!--Menu Product Tamplate-->
-      <div class="menu-product item  menu-product-template" style="display: none;">
-        <div class="menu-product-content">
-            <div class="menu-product-img">
-                <img src="" alt="">
-            </div>
-            <div class="menu-product-explanation">
-                <div class="product-kod">
-                    <h5>Ürün Kodu : <span class="kod" id="product-code "></span></h5>
+        <!--Offer Tamplate-->
+        <a class="offer-tamplate"  href="">
+            <div class="offer">
+                <span>Kampanyaya Katıl</span>
+                <div class="offer-img-div">
+                    <img src="" alt="">
                 </div>
-                <div class="menu-product-name">
-                    <h2> </h2>
-                </div>
-                <div class="menu-product-info">
-                    <ul>
-                        <li><img src="images/check(1).png" alt=""><span></span></li>
-                        <li><img src="images/check(1).png" alt=""><span></span></li>
-                    </ul>
-                </div>
-                <div class="menu-product-price">
-                    <div class="price">
-                        <span> </span>
-                    </div>
-                    <div class="price-Kdv">
-                        <h6>Kdv</h6>
-                        <h6>Dahil</h6>
-                    </div>
-                </div>
-
-                <div class="menu-product-evaluation">
-                    <div class="stars">
-                        <!-- Burada yıldızların doğru sayıda ve doğru türde olduğundan emin olmalısınız. -->
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="evaluation-count">
-                        <h5 class="evaluation-countt"></h5>
-                    </div>
+                <div class="offer-div-info">
+                    <h4></h4>
+                    <p></p>
                 </div>
             </div>
-
-            <a class="şablon-sec" "><span>Şablon Seç</span></a>
-
-            <div class="menu-product-add">
-                <div class="count">
-                    <button ><i class="fa-solid fa-plus fa-xs" style="color: #969896;"></i></button >
-                    <input type="number" value="1">
-                    <button ><i class="fa-solid fa-minus fa-xs " style="color: #969896;"></i></button >
-                </div>
-                <div class="add-btn">
-                    <button >Sepete Ekle</button >
-                </div>
-        </div>
-        </div>
-    </div>
-    <!--Offer Tamplate-->
-    <a class="offer-tamplate" style="display:none" href="">
-        <div class="offer">
-            <span>Kampanyaya Katıl</span>
-            <div class="offer-img-div">
-                <img src="" alt="">
-            </div>
-            <div class="offer-div-info">
-                <h4></h4>
-                <p></p>
-            </div>
-        </div>
-    </a>
-    <!--Category Titel and DropDown tamplate Elements -->
-    <li class="category-list-element category-list-element-template "  style="display: none;" href="#">
-        <a class="">
-            <span class="list-title" >Matbaa ve baskı işleri</span>
         </a>
-            <div class="dropdown">
-                <div class="category-titles">
-                    <ul>
+        <!--Category Titel and DropDown tamplate Elements -->
+        <li class="category-list-element category-list-element-template "   href="#">
+            <a class="">
+                <span class="list-title" >Matbaa ve baskı işleri</span>
+            </a>
+                <div class="dropdown">
+                    <div class="category-titles">
+                        <ul>
+                            
                         
-                       
-                    </ul>
+                        </ul>
+                    </div>
+                    <div class="category-content-box">
+                        
+                    </div>
                 </div>
-                <div class="category-content-box">
-                    
-                </div>
-            </div>
-    </li>
-    <!--content template-->
-    <div class="category-content category-content-template " data-category="">
-        <ul>
-
-        </ul>
-    </div>
-    <!--title template-->
-    <li class="title-in-dropdown-template title-in-dropdown" data-category="" style="display: none;" >
-        <span class="category-title ">Kurumsal Çözümler</span>
-        <i class="fa-solid fa-angle-right" style="color: #465667;"></i>
-    </li>
-    <!--category-last-item template-->
-    <a class="for-you for-you-template" href="#" style="display: none;">
-        <li class="" href="#">
-            size özel
-            <span class="new">yeni</span>
         </li>
-    </a>
-    <!--Category find Kartuş Card-->
+        <!--content template-->
+        <div class="category-content category-content-template " data-category="">
+            <ul>
 
+            </ul>
+        </div>
+        <!--title template-->
+        <li class="title-in-dropdown-template title-in-dropdown" data-category=""  >
+            <span class="category-title ">Kurumsal Çözümler</span>
+            <i class="fa-solid fa-angle-right" style="color: #465667;"></i>
+        </li>
+        <!--category-last-item template-->
+        <a class="for-you for-you-template" href="#" >
+            <li class="" href="#">
+                size özel
+                <span class="new">yeni</span>
+            </li>
+        </a>
+        <!--Category find Kartuş Card-->
+        <div class="search-for-toner" >
+            <div class="header-box">
+                <div class="title-box selected-title-box " index="1">
+                    <span>Marka & Model ile Ara</span>
+                </div>
+                <div class="title-box" index="2">
+                    <span>Kartuş & Yazıcı Numarası ile Ara</span>
+                </div>
+                <div class="title-box" index="3">
+                    <span>Kayıtlı Yazıcılarım</span>
+                </div>
+            </div> 
+            <div class="body-box">
+
+                <div class="find-with-brand active"  index="1">
+                    <div class="find-brand-box">
+                        <div class="brand-select">
+                            <span>Marka Seçiniz</span>
+                            <img src="images/arrows/left-arrow.png" alt="">
+                        </div>
+
+                        <div class="model-select">
+                            <span>Model Seçiniz</span>
+                            <img src="images/arrows/left-arrow.png" alt="">
+                        </div>
+                        <button >
+                            Kartuş & Toner Ara
+                        </button >
+                        </div>
+                        <button  class="add-list">+ Listede olmayan yazıcıyı ekleyin</button >
+                </div>
+                <div class="find-with-code" index="2">
+                    <div class="search-box">
+                        <input type="text" placeholder="Kartuş Numarsına Göre aratın!">
+                        <button >ARA</button >
+                    </div>
+                        <span>Veya</span>
+                    <div class="search-box">
+                        <input type="text" placeholder="Yazıcı Nuamrası Göre Aratın!">
+                        <button >ARA</button >
+                    </div>
+                </div>
+
+                <div class="mine-device" index="3">
+                    <button >+ Yeni Cihaz Ekle</button >
+                </div>
+
+
+            </div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
     <script src="js/header.js"></script>
     <script src="js/category.js"></script>
@@ -1056,61 +1112,12 @@
     <script src="js/question-bar.js"></script>
     <script src="js/popular-toble.js"></script>
     <script src="js/footer-list.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 </body>
 
 </html>
 <!--
-<div class="search-for-toner">
-                                        <div class="header-box">
-                                            <div class="title-box selected-title-box " index="1">
-                                                <span>Marka & Model ile Ara</span>
-                                            </div>
-                                            <div class="title-box" index="2">
-                                                <span>Kartuş & Yazıcı Numarası ile Ara</span>
-                                            </div>
-                                            <div class="title-box" index="3">
-                                                <span>Kayıtlı Yazıcılarım</span>
-                                            </div>
-                                        </div> 
-                                        <div class="body-box">
 
-                                            <div class="find-with-brand active"  index="1">
-                                                <div class="find-brand-box">
-                                                    <div class="brand-select">
-                                                        <span>Marka Seçiniz</span>
-                                                        <img src="images/arrows/left-arrow.png" alt="">
-                                                    </div>
-
-                                                    <div class="model-select">
-                                                        <span>Model Seçiniz</span>
-                                                        <img src="images/arrows/left-arrow.png" alt="">
-                                                    </div>
-                                                    <button >
-                                                        Kartuş & Toner Ara
-                                                    </button >
-                                                    </div>
-                                                    <button  class="add-list">+ Listede olmayan yazıcıyı ekleyin</button >
-                                            </div>
-                                            <div class="find-with-code" index="2">
-                                                <div class="search-box">
-                                                    <input type="text" placeholder="Kartuş Numarsına Göre aratın!">
-                                                    <button >ARA</button >
-                                                </div>
-                                                    <span>Veya</span>
-                                                <div class="search-box">
-                                                    <input type="text" placeholder="Yazıcı Nuamrası Göre Aratın!">
-                                                    <button >ARA</button >
-                                                </div>
-                                            </div>
-
-                                            <div class="mine-device" index="3">
-                                                <button >+ Yeni Cihaz Ekle</button >
-                                            </div>
-
-
-                                        </div>
-                                    </div>
 
 -->

@@ -53,10 +53,10 @@ a{
     position: relative;
     display: flex;
     align-items: center;
-    width: 419px; 
+    width: 449px; 
     height:40px ;
     border: 2px solid #C1CED9;
-    margin-left: 80px;
+    margin-left: 100px;
     z-index: 99999;
     transition: all 0.2s ease;
 }
@@ -262,7 +262,7 @@ a{
 #navigation{
     display: flex;
     gap: 2px;
-    width: 469px;
+    width: 509px;
     justify-self:end;
     padding-left: 85px;
     margin-top: 5px;
@@ -412,7 +412,7 @@ a{
 
 }
 .nav-btn span{
-    font-size: 10.5px;
+    font-size: 11.5px;
     color: #2C97DE;
     text-transform: uppercase;
 
@@ -441,7 +441,8 @@ a{
     display: flex;
     align-items: center;
     gap: 9px;
-    width: 120px;
+    min-width: 120px;
+    max-width: 150px;
     margin-left: -4px;
     cursor: pointer;
     z-index: 90;
@@ -455,16 +456,18 @@ a{
   }
   
 #para{
-    color:#eda23e ;
-    font-weight: 500;
-    font-size: 10px;
+    color:#f07a05db;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: -2px;
 }
 
 #count-info{
     color: rgb(130, 125, 125);
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     margin-bottom: 3px;
+    font-weight: 400;
 }
 .open-cart{
     border: none;

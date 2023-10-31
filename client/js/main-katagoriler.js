@@ -305,7 +305,8 @@ $(function() {
     var lists = $(".menu .menu-list .list");
 
     lists.eq(0).addClass("active");
-    loadProducts('matbaa');
+    
+    loadProducts(lists.eq(0).data("key"));
 
     lists.hover(function() {
         lists.removeClass("active");
@@ -324,9 +325,11 @@ $(function() {
         var products = AnaKatagoriProducts[productListKey];
         var fragment = $(document.createDocumentFragment());// Dom nesnesi burada toplayıp toplu dom'a ekliyorum
         
-        $.each(products, function(i, product) {
+        $.each(products, function(i, product) {  
+            if (i >= 4) { 
+                return false; 
+            }
             var mainProductTamplate = $(".menu-product-template").clone().removeClass("menu-product-template");
-
             
             mainProductTamplate.css('display', 'inline-block');
             mainProductTamplate.find(".menu-product-img img").attr("src", product.imgUrl);
@@ -349,6 +352,8 @@ $(function() {
                 mainProductTamplate.find(".şablon-sec").remove();
             }
             fragment.append(mainProductTamplate);
+
+
         });
         $(".menu-productss").append(fragment);
     };

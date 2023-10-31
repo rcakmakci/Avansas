@@ -13,6 +13,9 @@ const imageJSON = {
   $(function() {
 
     $.each(imageJSON.images, function (index, value) { 
+      if(index > 7){
+        return false
+      }
         var brandTamplate = $(".brand-tamplate").clone().removeClass("brand-tamplate");
         brandTamplate.css("display", "block");
         brandTamplate.find("img").attr("src", value);

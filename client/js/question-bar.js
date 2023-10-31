@@ -1,18 +1,18 @@
 $(function() {
     var $questionBars = $(".question-bar");
 
-    $questionBars.eq(0).find(".answer").css("display","block");
+    var $currentOpenAnswer = $questionBars.eq(0).find(".answer").show();
 
-    $questionBars.each(function(index, questionBar) {
-        var $question = $(questionBar).find(".question");
-        var $answer = $(questionBar).find(".answer");
+    $questionBars.on("click", ".question", function() {
 
-        $question.click(function() {
-            $(".question-bar .answer").each(function(ansIndex, ans) {
-                $(ans).css("display","none");
-            });
+        var $answer = $(this).next(".answer");
+        
+        if ($answer.is(':visible')) {
+            return;
+        }
 
-            $answer.css("display","block");
-        });
+        $currentOpenAnswer.hide();
+        $answer.show();
+        $currentOpenAnswer = $answer;
     });
 });

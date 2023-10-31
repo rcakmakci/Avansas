@@ -25,8 +25,8 @@ $(function () {
     $(document).on('click', ".sh-increment", function(){
         let input = $(this).next('input');
         input.val(parseInt(input.val()) + 1).change();
-        let productCode = $(this).closest('.cart-product').attr('product-code');
-        cartProudctIncrement(productCode).then(() =>{
+        
+        cartProudctIncrement.call(this).then(() =>{
             showCart();});
         
     });
@@ -34,12 +34,15 @@ $(function () {
     // Decrement Product Form Cart
     $(document).on('click', ".sh-decrement", function(){
         let input = $(this).prev('input');
-        if (parseInt(input.val()) > 0) {
+        if (parseInt(input.val()) > 1) {
             input.val(parseInt(input.val()) - 1).change();
+            cartProuductDecrement.call(this).then(() =>{
+                showCart() });
+        }else{
+            input.val(parseInt(input.val() = 1)).change();
         }
-        let productCode = $(this).closest('.cart-product').attr('product-code');
-        cartProuductDecrement(productCode).then(() =>{
-            showCart();});
+        
+       
         
 
     });
@@ -51,7 +54,7 @@ $(function () {
 
         cartProuductCountUpdate(productCode,countProduct).then(() => {
             showCart();
-        })
+        });
     });
     
     // ADD PRODUCT FROM CARD
@@ -83,20 +86,39 @@ function addProductCart(element) {
             "ürünKodu": parseInt(urunDiv.find('.product-kod .kod').text()),
             "Adet": parseInt(urunDiv.find('.count input').val()) // try catch doğruluğunu kontrol et 
         };
-
-        $.ajax({
-            type: 'POST',
-            url: 'http://127.0.0.1:8000/sepet-ekle',
-            data: JSON.stringify(urunData),
-            contentType: 'application/json',
-            success: resolve,
-            error: function(jqXHR, textStatus, errorThrown) {
-                reject({
-                    status: jqXHR.status,
-                    message: errorThrown
-                });
-            }
-        });
+       if( typeof urunData.ürünKodu === 'number' && typeof urunData.Adet === 'number' , urunData.Adet >= 1){
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1:8000/sepet-ekle',
+                data: JSON.stringify(urunData),
+                contentType: 'application/json',
+                success: function (reponse) {
+                    resolve(reponse);
+                    urunDiv.find('.count input').val(1);
+                    Swal.fire({
+                        title: 'Ürün Başarıyla Sepete Eklendi',
+                        icon: 'success',
+                        confirmButtonText: 'Tamam',
+                        confirmButtonColor: '#3085d6',
+                      });
+                 },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    reject({
+                        status: jqXHR.status,
+                        message: errorThrown
+                    });
+                }
+            });
+        }else{
+            Swal.fire({
+                title: 'Lütfen Adeti Doğru Giriniz',
+                icon: 'warning',
+                confirmButtonText: 'Tekrar Dene',
+                confirmButtonColor: '#922222',
+            });
+            urunDiv.find('.count input').val(1);
+        }
+        
     });
 }
 
@@ -124,8 +146,8 @@ function deleteProductCart(id) {
         $.ajax({
             type: 'DELETE',
             url: `http://127.0.0.1:8000/sepet/ürün-kaldır/${id}`,
-            success: function(data){
-                resolve(data);
+            success: function(reponse){
+                resolve(reponse);
             },
             error: reject
         });
@@ -138,7 +160,9 @@ function cartProuductCountUpdate(productCode,adet) {
             type: 'PUT',
             url: `http://127.0.0.1:8000/sepet/ürün-adet-update/${productCode}/${adet}`,
             contentType: 'application/json',
-            success: resolve,
+            success: function (response) {
+                resolve(reponse);
+            },
             error: function(jqXHR, textStatus, errorThrown) {
                 reject({
                     status: jqXHR.status,
@@ -149,13 +173,16 @@ function cartProuductCountUpdate(productCode,adet) {
     })
  }
 
-function cartProudctIncrement(productCode) { 
+function cartProudctIncrement() { 
     return new Promise((resolve, reject) =>{
+        let productCode = $(this).closest('.cart-product').attr('product-code');
         $.ajax({
             type: 'PUT',
             url: `http://127.0.0.1:8000/sepet/ürün-artır/${productCode}`,
             contentType: 'application/json',
-            success: resolve,
+            success: function (reponse) {  
+                resolve(reponse)
+            },
             error: function(jqXHR, textStatus, errorThrown) {
                 reject({
                     status: jqXHR.status,
@@ -166,13 +193,16 @@ function cartProudctIncrement(productCode) {
     })
  }
 
- function cartProuductDecrement(productCode) { 
+ function cartProuductDecrement() { 
     return new Promise((resolve, reject) =>{
+        let productCode = $(this).closest('.cart-product').attr('product-code');
         $.ajax({
             type: 'PUT',
             url: `http://127.0.0.1:8000/sepet/ürün-azalt/${productCode}`,
             contentType: 'application/json',
-            success: resolve,
+            success: function (reponse) { 
+                resolve(reponse);
+             },
             error: function(jqXHR, textStatus, errorThrown) {
                 reject({
                     status: jqXHR.status,
@@ -237,10 +267,7 @@ function renderCart(products) {
 }
 function calculateTotalPrice(products) {
     return products.reduce((total, product) => {
-        if (!product || !product.ürün || typeof product.Adet !== 'number' || typeof product.ürün.Fiyat !== 'number') {
-            console.error('Ürün geçersiz özelliklere sahip:', product);
-            return total;
-        }
+       
         if (product.Adet <= 0 || product.ürün.Fiyat < 0) {
             console.error('Ürün adedi veya fiyatı negatif olamaz:', product);
             return total;
@@ -271,7 +298,7 @@ function changeCartDetail(data) {
 
 
     if (total === 0 || !data) {
-        total = "00.00";
+        total = "0.00";
         count = 0
     } else {
         total = total.toFixed(2).toLocaleString('tr-TR');
@@ -279,7 +306,7 @@ function changeCartDetail(data) {
 
 
     $("#count-info").text(`${count} Ürün`);
-    $("#para").text(total + "TL");
+    $("#para").text(total + " TL");
     $(".shopping-cart-price span").text(`${total} TL`);
 }
 
