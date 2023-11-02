@@ -397,3 +397,47 @@ $(document).on("click", '.header-box .title-box',function() {
         }
     });
 });
+
+
+
+
+var opportunityProducts = [
+    {
+      image: 'https://cdnsta.avansas.com/mnresize/50/-/urun/77674/pinar-yagli-sut-500-ml-zoom-1.jpg',
+      name: 'Pınar Yağlı Süt 500 ml',
+      price: '24,78 TL'
+    },
+    {
+      image: 'https://cdnsta.avansas.com/mnresize/50/-/urun/89789/euro-vending-karton-brdk-y-dsn-7oz-50li-zoom-1.jpg',
+      name: 'Euro Vending Karton Bardak Yıldız Desenli 7 Oz 50 Adet',
+      price: '21,73 TL'
+    },
+    {
+      image: 'https://cdnsta.avansas.com/mnresize/50/-/urun/82599/domestos-hijyenik-kopuk-banyo-450ml-zoom-1.jpg',
+      name: 'Domestos Hijyenik Köpük Çamaşır Suyu Banyo Kutup Ferahlığı Sprey 450 ml',
+      price: '40,91 TL'
+    },
+    {
+      image: 'https://cdnsta.avansas.com/mnresize/50/-/urun/77905/avansas-44-gr-termal-rulo-56x16-10lu-zoom-1.jpg',
+      name: 'Avansas Yazarkasa / Pos Rulosu 56 mm x 16 m 44 gr/m²  10\'lu Paket',
+      price: '54,95 TL'
+    },
+    {
+      image: 'https://cdnsta.avansas.com/mnresize/50/-/urun/20CPN4/calisma-masasi-paketi--2-zoom-1.jpg',
+      name: 'Çalışma Masası Paketi - 2',
+      price: '546,88 TL'
+    }
+  ];
+
+
+  var opportunityContainer = $('.opportunity-products');
+
+  $.each(opportunityProducts, function(index, product) {
+    var productTemplate = $('.opportunity-product-template').clone().removeClass('opportunity-product-template').css('display', 'flex');
+    productTemplate.find('img').attr('src', product.image).attr('alt', product.name);
+    productTemplate.find('.opportunity-product-name').text(product.name);
+    productTemplate.find('.opportunity-product-price').text(product.price);
+    opportunityContainer.append(productTemplate);
+
+});
+
