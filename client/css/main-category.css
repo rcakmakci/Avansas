@@ -303,6 +303,9 @@
     font-size: 20px;
     font-weight: 500;
 }
+.menu-product-add .count button i{
+    color: #969896;
+}
 .menu-product-add .count button:hover{
     background-color: #EBEBEB;
 }

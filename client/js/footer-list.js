@@ -71,10 +71,6 @@ $(function() {
     const footerContent = $("#footerContent");
     
 
-    if (!data || $.isEmptyObject(data)) {
-        return;
-    }
-
     let iletisimData = null;
 
     $.each(data, function(category, items) {

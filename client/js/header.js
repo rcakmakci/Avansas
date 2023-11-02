@@ -45,48 +45,7 @@ $('.animation').on('animationend', function() {
 toggleAnimationAndColor();
 
 
-$("#search-input").on('input', function() {
-    let query = $(this);
 
-    if (query.val().length > 2) {
-        $.ajax({
-            url: '/api/search',
-            type: 'GET',
-            data: { q: query.val() },
-            success: function(data) {
-                
-            },
-            error:function () {
-                OpenSerachResultBox(data)
-                
-            }
-
-        });
-    }
-
-});
-// Sarch div open 
-
-function OpenSerachResultBox(data) {  
-//Gelen datayla işlemler yapabilriim burada search resul box ı dinamik hale getirebilrim 
-    const searchResultBox =  $(".search-results-box");
-    const inputVal =  $("#search-input").val();
-    
-    if (inputVal == "kağıt") {
-     searchResultBox.addClass("search-results-active");
-
-    }
-    else{
-    searchResultBox.removeClass("search-results-active");
-    }
-    
-}
-$(document).on('click', function(event) {
-    const searchResultBox =  $(".search-results-box");
-    if (!$(event.target).closest('.search-div').length) {
-        searchResultBox.removeClass("search-results-active");
-    }
-});
     
 
 // Active Search div 

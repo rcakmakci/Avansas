@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
-from .serializer import SepetÜrünModelSerileştirici
+from .serializer import SepetÜrünModelSerileştirici, ÜrünSerileştirici
 from rest_framework.response import Response as Cevap
 from .models import Ürün, SepetÜrün 
 from rest_framework import status as Durum
@@ -11,20 +11,19 @@ def sepet_detayları_al(Talep):
     if Talep.method == 'GET':
         sepet_ürünleri = SepetÜrün.objects.all()
         serileştirici = SepetÜrünModelSerileştirici(sepet_ürünleri, many=True)
-        
-        # Toplam fiyatı hesapla
+
         toplam_fiyat = sum([ürün.Adet * ürün.ürün.Fiyat for ürün in sepet_ürünleri])
-        
-        # Benzersiz ürün sayısını hesapla
-        benzersiz_ürün_sayısı = sepet_ürünleri.count()
-        
-        # Cevap verisi
+
+
+        toplam_adet = sum([ürün.Adet for ürün in sepet_ürünleri])
+
         cevap_verisi = {
-            'productLength': benzersiz_ürün_sayısı,
+            'productLength': toplam_adet,  
             'totalPrice': toplam_fiyat,
         }
 
         return Cevap(cevap_verisi, status=Durum.HTTP_200_OK)
+
 
 
 @api_view(['POST'])

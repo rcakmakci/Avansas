@@ -265,7 +265,9 @@
     width: 104px;
 
 }
-
+.product-add .count button i{
+    color: #969896;
+}
 .product-add .add-btn button{
     position: absolute;
     width: 108px;
