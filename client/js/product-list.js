@@ -237,7 +237,7 @@ $(function() {
         items: 6,
         pagination: false,
         slideBy: 6,
-        margin: 15,
+        margin: 14,
     });
 
 

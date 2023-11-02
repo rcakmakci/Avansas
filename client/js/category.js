@@ -398,7 +398,7 @@ $(document).on("click", '.header-box .title-box',function() {
     });
 });
 
-
+// opportunity Box under Bell Button (navbar)
 
 
 var opportunityProducts = [

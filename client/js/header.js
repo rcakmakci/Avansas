@@ -35,7 +35,7 @@ function toggleAnimationAndColor() {
     $('.animation').addClass('animation-active');
 }
 
-// Animasyon bittiğinde yeniden tetikliyor
+// Animasyon bittiğinde yeniden tetikliyorr
 $('.animation').on('animationend', function() {
     $(this).removeClass('animation-active');
     setTimeout(toggleAnimationAndColor, 4000);  

@@ -7,16 +7,17 @@ $(function(){
     //Event handler da Click Eventini kullanım şeklleri 
 
     //javaScript ile 
-    document.querySelector(".left-arrow").addEventListener("click",function() {
+    document.querySelector(".bannerS-left-arrow").addEventListener("click",function() {
         side_slide(-1);
     });
     //jQury modern version ile 
-    $('.right-arrow').on("click",function() {
+    $('.bannerS-right-arrow').on("click",function() {
         side_slide(1);
     });
 
-    //jQury popüler fakat eski version ile
+ 
     $('.sliders-btns button').each(function(i) {
+           //jQury popüler fakat eski version ile
         $(this).click(function() {
             btm_slide(i + 1);
         });

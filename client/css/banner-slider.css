@@ -55,7 +55,7 @@
     cursor: pointer;
 
 }
-.banner-slider-container .left-arrow{
+.banner-slider-container .bannerS-left-arrow{
     position: absolute;
     left: 0;
     top: 45%;
@@ -63,7 +63,7 @@
     
 
 }
-.banner-slider-container .right-arrow{
+.banner-slider-container .bannerS-right-arrow{
     position: absolute;
     right: 0;
     top: 45%;
